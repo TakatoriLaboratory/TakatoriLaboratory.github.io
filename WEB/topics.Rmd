@@ -1,0 +1,263 @@
+---
+title: ""
+output:
+  html_document:
+    theme: null
+    toc: false
+---
+
+<style>
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    background:#E3F2FD;
+    font-family:Arial,sans-serif;
+}
+
+/* R Markdown の余白を削除 */
+.main-container{
+    max-width:100% !important;
+    width:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+}
+
+/* ヘッダー */
+header{
+width: 100%;
+background: #0055b3; 
+color: #ffffff;
+text-align: center;
+padding: 60px 20px;
+box-sizing: border-box;
+border-bottom: 3px solid #00d4ff;
+}
+
+header h1 { 
+margin: 0; 
+font-size: 42px; 
+font-weight: 700; 
+letter-spacing: 2px; 
+}
+header p { margin: 12px 0 0 0; font-size: 18px; color: #e2e8f0; font-weight: 300; letter-spacing: 1px; }
+
+/* メニューバー */
+nav { 
+width: 100%;
+background: #0055b3; 
+display: flex; 
+justify-content: center; 
+flex-wrap: wrap; 
+position: sticky; 
+top: 0; z-index: 1000; 
+box-shadow: 0 4px 20px rgba(0,0,0,0.06); 
+}
+nav a {
+color: #e2e8f0;
+text-decoration: none; 
+padding: 18px 28px; 
+font-weight: 500; 
+font-size: 15px; 
+transition: all 0.3s ease;
+position: relative;
+}
+nav a:hover { 
+color: #ffffff;
+background: rgba(255, 255, 255, 0.1); 
+}
+nav a.active { 
+color: #00d4ff; 
+font-weight: 700; 
+}
+nav a.active::after { 
+content: ''; 
+position: absolute; 
+bottom: 0; left: 0; 
+width: 100%; 
+height: 3px; 
+background: #00d4ff; 
+}
+
+/* 本文エリア */
+.container{ 
+width:90%; 
+max-width:1200px; 
+margin:40px auto; 
+}
+.card{ 
+background:white; 
+padding:30px; 
+margin-bottom:30px; 
+border-radius:12px; 
+box-shadow:0 4px 12px rgba(0,0,0,.06); 
+border-top: 4px solid #0066cc;
+}
+.card h2{ 
+margin-top:0; 
+color: #0066cc; 
+font-size: 22px; 
+border-bottom: 1px solid #e2e8f0; 
+padding-bottom: 10px; margin-bottom: 20px;
+}
+
+/* リンクスタイル */
+.card a { 
+color: #0066cc; 
+text-decoration: none; 
+font-weight: 500; 
+transition: color 0.3s ease; 
+}
+.card a:hover { 
+color: #00d4ff; 
+text-decoration: underline; 
+}
+.link-list a { 
+display: block; 
+margin-bottom: 10px;
+}
+
+/* フッター */
+footer{
+background:#0055b3;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+/* 記事の区切り線と余白 */
+.blog-post {
+    margin-bottom: 40px; /* 記事間の余白 */
+    padding-bottom: 30px;
+    border-bottom: 2px dashed #cbd5e1; /* 点線で区切り線を引く */
+}
+
+/* 最後の記事には線を引かない（綺麗に見せるためのテクニック） */
+.blog-post:last-child {
+    border-bottom: none;
+    margin-bottom: 10px;
+    padding-bottom: 0;
+}
+
+/* 投稿日とタイトルのデザイン */
+.post-meta {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.blog-post h3 {
+    margin: 0 0 15px 0;
+    color: #0066cc; /* タイトルを少し強調 */
+    font-size: 20px;
+}
+header h1 a {
+    text-decoration: none; /* 下線を消す */
+    color: inherit;        /* 文字色を親要素に合わせる（黒など） */
+}
+
+/* スマホ対応 */
+@media(max-width:768px){
+header{ padding:40px 15px; }
+header h1{ font-size:30px; }
+nav{ flex-direction:column; }
+
+.hero{ width: 100%; height: 250px; margin: 15px auto;}
+.slide { width: 75%; height: auto; }
+.slide.active { left: 12.5%; }
+.slide.prev { left: -15%; }
+.slide.next { left: 40%; }
+
+.container{ width:95%; }
+}
+</style>
+
+<header>
+    <h1><a href="index.html">鷹取研究室</a></h1>
+    <p>Wireless Communications & ISAC Laboratory</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="research.html">研究紹介</a>
+    <a href="members.html">メンバー</a>
+    <a href="equipment.html">研究設備</a>
+    <a href="publications.html">研究実績</a>
+    <a href="topics.html" class="active">Topics</a>
+    <a href="contact.html">Information</a>
+</nav>
+
+
+<div class="container">
+<div class="card">
+<h2>Topics</h2>
+
+<!-- 記事 1 -->
+<div class="blog-post" id="topic1">
+<div class="post-meta">2026/07/08</div>
+<h3>南山大学オープンキャンパスについて</h3>
+<p>南山大学のオープンキャンパスが以下の日程で実施されます。研究室一同、皆様の来場をお待ちしております。</p>
+<ul>
+<li><b>日時：</b> 2026年7月18日(土)、7月19日(日)</li>
+<li><b>時間：</b> 10:00 ～ 16:00</li>
+</ul>
+<p>【鷹取研究室が参加するイベント】</p>
+
+<ul>
+  <li>
+    <b>イベント名：</b> 未来をつくる実験室探検ツアー<br>
+    <b>日時：</b> 2026年7月18日（土）<br>
+    <b>開催時間：</b> ① 12:00～12:20 ② 12:25～12:45 ③ 12:50～13:10
+  </li>
+  <br>
+  <li>
+    <b>イベント名：</b> 電子情報工学科の全研究室の研究を20分で<br>
+    <b>日時：</b> 2026年7月19日（日）<br>
+    <b>開催時間：</b> ① 13:00～13:20 ② 13:25～13:45 ③ 13:50～14:10 ④ 14:15～14:35
+  </li>
+</ul>
+
+<div class= "hover-link">
+<a href="https://www.nanzan-u.ac.jp/admission/opencampus/" target="_blank">≫ 2026年オープンキャンパス特設サイト</a>
+</ul>
+<a href="https://st-nanzan-u.app.box.com/s/39ozu5cko8ljr9k2ec792qptf1nd1tko">≫ 2026年オープンキャンパス 研究紹介ポスター</a>
+</div>
+</div>
+
+
+
+
+<!-- 記事 2 -->
+<div class="blog-post" id="topic2">
+<div class="post-meta">2026/06/01</div>
+<h3>ホームページ公開</h3>
+<p>鷹取研究室のウェブサイトを公開いたしました。研究内容や設備について随時更新していきます。</p>
+</div>
+    
+<!-- 次の記事を追加する場合は、ここに同じように div.blog-post を追加 -->
+
+<div class="blog-post" id="topic3">
+<div class="post-meta">2026/03/19</div>
+<h3>優秀論文賞表彰</h3>
+<p>修士2年の小畠慎二郎さんが、2025年度優秀論文賞を受賞しました。</p>
+</div>
+
+<div class="blog-post">
+<div class="post-meta">2026/03/09～2026/03/13</div>
+<h3>学会口頭発表</h3>
+<p>電子情報通信学会総合大会に学部4年の2名が参加しました。</p>
+</div>
+
+<div class="blog-post">
+<div class="post-meta">2025/09/08～2025/09/12</div>
+<h3>学会口頭発表</h3>
+<p>電子情報通信学会ソサエティ大会に修士2年の2名が参加しました。</p>
+</div>
+
+</div>
+</div>
+
+<footer>
+    &copy; 2026 Takatori Laboratory
+</footer>

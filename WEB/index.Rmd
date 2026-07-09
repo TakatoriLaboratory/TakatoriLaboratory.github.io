@@ -1,0 +1,378 @@
+---
+title: ""
+output:
+  html_document:
+    theme: null
+    toc: false
+---
+
+<style>
+html,body{
+margin:0;
+padding:0;
+width:100%;
+background:#E3F2FD;
+font-family:Arial,sans-serif;
+}
+
+/* R Markdown の余白を削除 */
+.main-container{
+max-width:100% !important;
+width:100% !important;
+margin:0 !important;
+padding:0 !important;
+}
+
+/* ヘッダー */
+header{
+width: 100%;
+background: #0055b3; 
+color: #ffffff;
+text-align: center;
+padding: 60px 20px;
+box-sizing: border-box;
+border-bottom: 3px solid #00d4ff;
+}
+
+header h1 {
+margin: 0;
+font-size: 42px;
+font-weight: 700;
+letter-spacing: 2px;
+}
+
+header p {
+margin: 12px 0 0 0;
+font-size: 18px;
+color: #e2e8f0;
+font-weight: 300;
+letter-spacing: 1px;
+}
+
+/* ナビ */
+nav {
+width: 100%;
+background: #0055b3; 
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+position: sticky;
+top: 0;
+z-index: 1000;
+box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+nav a {
+color: #e2e8f0;
+text-decoration: none;
+padding: 18px 28px;
+font-weight: 500;
+font-size: 15px;
+transition: all 0.3s ease;
+position: relative;
+}
+
+nav a:hover {
+color: #ffffff;
+background: rgba(255, 255, 255, 0.1);
+}
+
+nav a.active {
+color: #00d4ff;
+font-weight: 700;
+}
+
+nav a.active::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 3px;
+background: #00d4ff;
+}
+
+/* -----------------------
+   Hero Slider (カルーセル仕様に改修・大画面化)
+----------------------- */
+.hero{
+width: 100%;
+max-width: 1100px;
+margin: 30px auto;
+position: relative;
+height: 600px;
+overflow: hidden;
+background: none;
+}
+
+#slider-track {
+position: relative;
+width: 100%;
+height: 100%;
+}
+
+.slide {
+position: absolute;
+top: 50%;
+left: 15%;
+transform: translateY(-50%) scale(0.8);
+width: 70%;
+height: auto;
+aspect-ratio: 7 / 5;
+object-fit: cover;
+border-radius: 14px;
+transition: all 0.5s ease-in-out;
+opacity: 0;
+z-index: 0;
+box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* 中央（現在）の画像 */
+.slide.active {
+left: 15%;
+transform: translateY(-50%) scale(1);
+opacity: 1;
+z-index: 2;
+}
+
+/* 左（前）の画像 */
+.slide.prev {
+left: -10%;
+transform: translateY(-50%) scale(0.85);
+opacity: 0.5;
+z-index: 1;
+}
+
+/* 右（次）の画像 */
+.slide.next {
+left: 40%;
+transform: translateY(-50%) scale(0.85);
+opacity: 0.5;
+z-index: 1;
+}
+
+.arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:52px;
+height:52px;
+border:none;
+border-radius:50%;
+background:rgba(0,0,0,.4);
+color:white;
+font-size:26px;
+cursor:pointer;
+transition:.2s;
+z-index: 10;
+}
+
+.arrow:hover{
+background:rgba(0,0,0,.7);
+}
+
+.arrow.left{
+left:15px;
+}
+
+.arrow.right{
+right:15px;
+}
+
+/* 本文 */
+.container{
+width:90%;
+max-width:1200px;
+margin:40px auto;
+}
+
+.card{
+background:#fff;
+padding:30px;
+margin-bottom:30px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+border-top:4px solid #0066cc;
+}
+
+.card h2{
+margin-top:0;
+color:#0066cc;
+border-bottom:1px solid #ddd;
+padding-bottom:10px;
+}
+
+.card p,
+.card li{
+line-height:1.8;
+}
+
+/* フッター */
+footer{
+background:#0055b3;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+header h1 a {
+    text-decoration: none; /* 下線を消す */
+    color: inherit;        /* 文字色を親要素に合わせる（黒など） */
+}
+
+/* リンクのホバー設定 */
+.card a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.card a:hover {
+    color: #00d4ff; /* ホバー時の水色 */
+    text-decoration: underline;
+}
+
+
+
+/* スマホ対応 */
+@media(max-width:768px){
+header{ padding:40px 15px; }
+header h1{ font-size:30px; }
+nav{ flex-direction:column; }
+
+.hero{ width: 100%; height: 250px; margin: 15px auto;}
+.slide { width: 75%; height: auto; }
+.slide.active { left: 12.5%; }
+.slide.prev { left: -15%; }
+.slide.next { left: 40%; }
+
+.container{ width:95%; }
+}
+</style>
+
+<header>
+<h1><a href="index.html">鷹取研究室</a></h1>
+<p>Wireless Communications & ISAC Laboratory</p>
+</header>
+
+<nav>
+<a href="index.html" class="active">Home</a>
+<a href="research.html">研究紹介</a>
+<a href="members.html">メンバー</a>
+<a href="equipment.html">研究設備</a>
+<a href="publications.html">研究実績</a>
+<a href="topics.html">Topics</a>
+<a href="contact.html">Information</a>
+</nav>
+
+<div class="hero">
+<div id="slider-track"></div>
+<button class="arrow left" onclick="prevImage()">❮</button>
+<button class="arrow right" onclick="nextImage()">❯</button>
+</div>
+
+<script>
+var images = [
+"IMG_6700.JPG",
+"IMG_7560.JPG",
+"IMG_7628.JPG",
+
+
+];
+
+var currentIndex = 0;
+var track = document.getElementById("slider-track");
+
+images.forEach(function(src) {
+var img = document.createElement("img");
+img.src = src;
+img.className = "slide";
+track.appendChild(img);
+});
+
+function updateSlider(){
+var slides = document.querySelectorAll(".slide");
+
+slides.forEach(function(slide, index) {
+slide.className = "slide"; 
+
+if (index === currentIndex) {
+slide.classList.add("active");
+} else if (index === (currentIndex - 1 + slides.length) % slides.length) {
+slide.classList.add("prev"); 
+} else if (index === (currentIndex + 1) % slides.length) {
+slide.classList.add("next"); 
+}
+});
+}
+
+function nextImage() {
+currentIndex = (currentIndex + 1) % images.length;
+updateSlider();
+}
+
+function prevImage() {
+currentIndex = (currentIndex - 1 + images.length) % images.length;
+updateSlider();
+}
+
+updateSlider();
+setInterval(nextImage, 10000);
+</script>
+
+<div class="container">
+
+<div class="card">
+<h2>研究室紹介    <span style="background: #e3f2fd; color: #0055b3; padding: 5px 10px; border-radius: 5px; font-size: 14px; font-weight: bold; border: 1px solid #0055b3;">
+    2025年4月 新設
+  </span></h2>
+
+
+<p>
+本研究室では通信・レーダ融合技術（ISAC）、無線通信システム、信号処理に関する研究を行っています。
+</p>
+</div>
+
+
+<div class="card">
+<h2>研究分野</h2>
+<ul>
+<li>ISAC（Integrated Sensing and Communications）</li>
+<li>OFDM・DFTs-OFDM</li>
+<li>レーダ信号処理</li>
+<li>MIMO・ビームフォーミング</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>最新トピックス</h2>
+  
+  <!-- 1件目：#topic1 に飛ぶ -->
+<div style="margin-bottom: 20px;">
+<div style="color: #64748b; font-size: 14px; font-weight: 500;">2026/07/08</div>
+<a href="topics.html#topic1" class="hover-link">南山大学オープンキャンパスについて</a>
+</div>
+
+  <!-- 2件目：#topic2 に飛ぶ -->
+<div style="margin-bottom: 20px;">
+<div style="color: #64748b; font-size: 14px; font-weight: 500;">2026/06/01</div>
+<a href="topics.html#topic2" class="hover-link">ホームページ公開</a>
+</div>
+
+  <!-- 3件目：#topic3 に飛ぶ -->
+
+<div style="margin-bottom: 20px;">
+<div style="color: #64748b; font-size: 14px; font-weight: 500;">2026/03/19</div>
+<a href="topics.html#topic3" class="hover-link">優秀論文賞表彰</a>
+  </div>
+
+<div style="text-align: right; border-top: 1px solid #e2e8f0; padding-top: 10px;">
+<a href="topics.html" style="font-size: 14px;">≫ 過去のトピックス一覧を見る</a>
+  </div>
+</div>
+
+</div>
+
+<footer>
+&copy; 2026 Takatori Laboratory
+</footer>

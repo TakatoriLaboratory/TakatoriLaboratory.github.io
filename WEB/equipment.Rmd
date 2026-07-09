@@ -1,0 +1,334 @@
+---
+title: ""
+output:
+  html_document:
+    theme: null
+    toc: false
+---
+
+<style>
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    background:#E3F2FD;
+    font-family:Arial,sans-serif;
+}
+
+.card {
+    scroll-margin-top: 100px;
+}
+
+.center-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-container{
+    max-width:100% !important;
+    width:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+}
+
+header {
+    width: 100%;
+    background: #0055b3; 
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    border-bottom: 3px solid #00d4ff;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin: 12px 0 0 0;
+    font-size: 18px;
+    color: #e2e8f0;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+nav {
+    background: #0055b3; 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+nav a {
+    color: #e2e8f0;
+    text-decoration: none;
+    padding: 18px 28px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    position: relative; /* 下線のために必要 */
+}
+
+nav a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 選択中のリンクに下線を固定 */
+nav a.active {
+    color: #00d4ff;
+    font-weight: 700;
+}
+
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #00d4ff;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    margin-bottom:30px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
+    border-top: 4px solid #0066cc; 
+}
+
+.card h2{
+    margin-top:0;
+    color: #0066cc; 
+    font-size: 22px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.toc-list a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.toc-list a:hover {
+    color: #00d4ff;
+}
+
+.back-to-top {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.back-to-top:hover {
+    color: #00d4ff !important;
+}
+
+footer{
+background:#0055b3;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+header h1 a {
+    text-decoration: none; /* 下線を消す */
+    color: inherit;        /* 文字色を親要素に合わせる（黒など） */
+}
+
+@media(max-width:768px){
+header{ padding:40px 15px; }
+header h1{ font-size:30px; }
+nav{ flex-direction:column; }
+
+.hero{ width: 100%; height: 250px; margin: 15px auto;}
+.slide { width: 75%; height: auto; }
+.slide.active { left: 12.5%; }
+.slide.prev { left: -15%; }
+.slide.next { left: 40%; }
+
+.container{ width:95%; }
+}
+</style>
+
+<body id="top">
+
+<header>
+    <h1><a href="index.html">鷹取研究室</a></h1>
+    <p>Wireless Communications & ISAC Laboratory</p>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="research.html">研究紹介</a>
+<a href="members.html">メンバー</a>
+<a href="equipment.html" class="active">研究設備</a>
+<a href="publications.html">研究実績</a>
+<a href="topics.html">Topics</a>
+<a href="contact.html">Information</a>
+</nav>
+
+<div class="container">
+<div class="card">
+<h2>設備一覧目次</h2>
+<ul class="toc-list">
+<li><a href="#wide_sdr">広帯域ソフトウェア無線機</a></li>
+<li><a href="#sdr">ソフトウェア無線機</a></li>
+<li><a href="#spectrum">スペクトラムアナライザ</a></li>
+<li><a href="#oscilloscope">デジタルオシロスコープ</a></li>
+<li><a href="#vsa">ベクトルシグナルアナライザ</a></li>
+<li><a href="#packet">パケットキャプチャ</a></li>
+<li><a href="#clock">クロックジェネレータ</a></li>
+<li><a href="#signal">シグナルジェネレータ</a></li>
+<li><a href="#splitter">広帯域分配器</a></li>
+<li><a href="#coupler">広帯域方向結合器</a></li>
+<li><a href="#target">レーダ測定用ターゲット</a></li>
+<li><a href="#iot">IoT無線評価機</a></li>
+<li><a href="#car">測定用ロボットカー</a></li>
+<li><a href="#drone">測定用ドローン</a></li>
+<li><a href="#bike">測定用電動三輪バイク</a></li>
+<li><a href="#printer">3Dプリンタ</a></li>
+</ul>
+</div>
+
+<!-- 各カードに class="center-img" を追加しました -->
+<div class="card" id="wide_sdr">
+<h2>広帯域ソフトウェア無線機</h2>
+<img src="無名.png" width="350" class="center-img">
+<p>広い周波数帯域の無線信号を送受信できるソフトウェア無線機です。ISACや6G無線通信の研究に利用しています。</p>
+<a href="#top" class="back-to-top">↑ 目次へ戻る</a>
+</div>
+
+<div class="card" id="sdr">
+<h2>ソフトウェア無線機</h2>
+<img src="無名.png" width="350" class="center-img">
+<p>通信方式をソフトウェアで自由に実装できる無線機です。</p>
+<a href="#top" class="back-to-top">↑ 目次へ戻る</a>
+</div>
+
+<div class="card" id="spectrum">
+<h2>スペクトラムアナライザ</h2>
+<img src="無名.png" width="350" class="center-img">
+<p>無線信号の周波数特性や信号強度を測定する機器です。</p>
+<a href="#top" class="back-to-top">↑ 目次へ戻る</a>
+</div>
+
+<div class="card" id="oscilloscope">
+<h2>デジタルオシロスコープ</h2>
+<img src="無名.png" width="350" class="center-img">
+<p>電気信号の時間波形を観測・解析する測定器です。</p>
+<a href="#top" class="back-to-top">↑ 目次へ戻る</a>
+</div>
+
+<div class="card" id="vsa">
+<h2>ベクトルシグナルアナライザ</h2>
+<img src="無名.png" width="350" class="center-img">
+<p>変調信号やEVMなどの通信品質を評価する測定器です。</p>
+<a href="#top" class="back-to-top">↑ 目次へ戻る</a>
+</div>
+
+<div class="card" id="packet">
+<h2>パケットキャプチャ</h2>
+<img src="無名.png" width="350" class="center-img">
+<p>通信パケットを取得し、ネットワーク通信を解析します。</p>
+<a href="#top" class="back-to-top">↑ 目次へ戻る</a>
+</div>
+
+<div class="card" id="clock">
+<h2>クロックジェネレータ</h2>
+<img src="無名.png" width="350" class="center-img">
+<p>高精度なクロック信号を生成し、測定機器の同期に利用します。</p>
+<a href="#top" class="back-to-top">↑ 目次へ戻る</a>
+</div>
+
+<div class="card" id="signal">
+<h2>シグナルジェネレータ</h2>
+<img src="無名.png" width="350" class="center-img">
+<p>通信・レーダ実験で使用する各種信号を発生させます。</p>
+<a href="#top" class="back-to-top">↑ 目次へ戻る</a>
+</div>
+
+<div class="card" id="splitter">
+<h2>広帯域分配器</h2>
+<img src="無名.png" width="350" class="center-img">
+<p>高周波信号を複数に分配するための装置です。</p>
+<a href="#top" class="back-to-top">↑ 目次へ戻る</a>
+</div>
+
+<div class="card" id="coupler">
+<h2>広帯域方向結合器</h2>
+<img src="無名.png" width="350" class="center-img">
+<p>高周波信号の一部を取り出して測定するための装置です。</p>
+<a href="#top" class="back-to-top">↑ 目次へ戻る</a>
+</div>
+
+<div class="card" id="target">
+<h2>レーダ測定用ターゲット</h2>
+<img src="無名.png" width="350" class="center-img">
+<p>レーダ性能を評価するための反射ターゲットです。</p>
+<a href="#top" class="back-to-top">↑ 目次へ戻る</a>
+</div>
+
+<div class="card" id="iot">
+<h2>IoT無線評価機</h2>
+<img src="無名.png" width="350" class="center-img">
+<p>IoT機器の通信性能評価や実験に利用します。</p>
+<a href="#top" class="back-to-top">↑ 目次へ戻る</a>
+</div>
+
+<div class="card" id="car">
+<h2>測定用ロボットカー</h2>
+<img src="無名.png" width="350" class="center-img">
+<p>走行しながら通信・レーダ測定を行う実験車両です。</p>
+<a href="#top" class="back-to-top">↑ 目次へ戻る</a>
+</div>
+
+<div class="card" id="drone">
+<h2>測定用ドローン</h2>
+<img src="無名.png" width="350" class="center-img">
+<p>空中から無線通信やレーダ測定を行うために利用します。</p>
+<a href="#top" class="back-to-top">↑ 目次へ戻る</a>
+</div>
+
+<div class="card" id="bike">
+<h2>測定用電動三輪バイク</h2>
+<img src="無名.png" width="350" class="center-img">
+<p>屋外での電波測定や移動実験に使用する実験車両です。</p>
+<a href="#top" class="back-to-top">↑ 目次へ戻る</a>
+</div>
+
+<div class="card" id="printer">
+<h2>3Dプリンタ</h2>
+<img src="無名.png" width="350" class="center-img">
+<p>アンテナ治具や実験装置を設計・製作するために利用しています。</p>
+<a href="#top" class="back-to-top">↑ 目次へ戻る</a>
+</div>
+</div>
+
+<footer>
+    &copy; 2026 Takatori Laboratory
+</footer>
