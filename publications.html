@@ -203,11 +203,24 @@ text-decoration: none;
 color: inherit; 
 }
 
-.menu-toggle { display: none; background: #0055b3; color: white; text-align: center; padding: 15px; cursor: pointer; font-size: 24px; border-bottom: 1px solid #004494; }
+.catchcopy1{
+text-align: center;
+color: #0066cc;
+font-size: 50px;
+font-weight: 700;
+margin-bottom: 40px;
+}
+
+.menu-toggle { display: none; background: #0055b3; color: white; text-align: center; padding: 15px; cursor: pointer; font-size: 24px; border-bottom: 1px solid #004494;
+
+position: sticky;
+top: 0;
+z-index: 1001; }
 
 @media(max-width:768px){
 .menu-toggle { display: block; }
-nav { display: none; flex-direction: column; }
+nav { display: none; flex-direction: column;
+position: sticky; }
 nav.open { display: flex; }
 nav a { text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
 header{ padding:40px 15px; }
@@ -221,7 +234,7 @@ header h1{ font-size:30px; }
 <a href="index.html">鷹取研究室</a>
 </h1>
 <p>
-Wireless Communications &amp; ISAC Laboratory
+Wireless Systems Laboratory
 </p>
 </header>
 <div class="menu-toggle" onclick="toggleMenu()">
@@ -231,7 +244,7 @@ Wireless Communications &amp; ISAC Laboratory
 <a href="index.html">Home</a> <a href="research.html">研究紹介</a>
 <a href="members.html">メンバー</a>
 <a href="equipment.html">研究設備</a>
-<a href="publications.html" class="active">研究実績</a>
+<a href="publications.html" class="active">研究業績</a>
 <a href="topics.html">Topics</a> <a href="contact.html">Information</a>
 </nav>
 <script>
@@ -247,7 +260,9 @@ document.querySelectorAll("#nav-menu a").forEach(el => {
 });
 </script>
 <div class="container">
-
+<h1 class="catchcopy1">
+研究業績
+</h1>
 <div class="card">
 <h2>
 国際会議発表
@@ -281,28 +296,6 @@ document.querySelectorAll("#nav-menu a").forEach(el => {
 <li>
 2026/03/19 2025年度優秀論文賞受賞
 </li>
-</div>
-<div class="card">
-<h2>
-卒業生の進路　<span style="background: #e3f2fd; color: #0055b3; padding: 5px 10px; border-radius: 5px; font-size: 14px; font-weight: bold; border: 1px solid #0055b3;">
-2025年4月以降 </span>
-</h2>
-<!--  
-<h3>主な就職先</h3>
-<ul>
-<li>オークマ株式会社</li>
-<li>株式会社豊田自動織機</li>
-<li>株式会社△△</li>
-</ul>
--->
-<h3>
-大学院進学
-</h3>
-<ul>
-<li>
-南山大学大学院
-</li>
-</ul>
 </div>
 </div>
 <footer>

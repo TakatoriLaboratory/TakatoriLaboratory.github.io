@@ -284,11 +284,16 @@ color: #00d4ff;
 text-decoration: underline;
 }
 
-.menu-toggle { display: none; background: #0055b3; color: white; text-align: center; padding: 15px; cursor: pointer; font-size: 24px; border-bottom: 1px solid #004494; }
+.menu-toggle { display: none; background: #0055b3; color: white; text-align: center; padding: 15px; cursor: pointer; font-size: 24px; border-bottom: 1px solid #004494;
+
+position: sticky;
+top: 0;
+z-index: 1001;}
 
 @media(max-width:768px){
 .menu-toggle { display: block; }
-nav { display: none; flex-direction: column; }
+nav { display: none; flex-direction: column;
+position: sticky; }
 nav.open { display: flex; }
 nav a { text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
 header{ padding:40px 15px; }
@@ -302,7 +307,7 @@ header h1{ font-size:30px; }
 <a href="index.html">鷹取研究室</a>
 </h1>
 <p>
-Wireless Communications &amp; ISAC Laboratory
+Wireless Systems Laboratory
 </p>
 </header>
 <div class="menu-toggle" onclick="toggleMenu()">
@@ -312,7 +317,7 @@ Wireless Communications &amp; ISAC Laboratory
 <a href="index.html" class="active">Home</a>
 <a href="research.html">研究紹介</a> <a href="members.html">メンバー</a>
 <a href="equipment.html">研究設備</a>
-<a href="publications.html">研究実績</a>
+<a href="publications.html">研究業績</a>
 <a href="topics.html">Topics</a> <a href="contact.html">Information</a>
 </nav>
 <script>
@@ -429,9 +434,9 @@ MIMO・ビームフォーミング
 <!-- 2件目：#topic2 に飛ぶ -->
 <div style="margin-bottom: 20px;">
 <div style="color: #64748b; font-size: 14px; font-weight: 500;">
-2026/07/09
+2026/06/24
 </div>
-<p><a href="topics.html#topic2" class="hover-link">ホームページ公開</a></p>
+<p><a href="topics.html#topic2" class="hover-link">「セントラルヘリコプターサービス株式会社」の工場見学</a></p>
 </div>
 <!-- 3件目：#topic3 に飛ぶ -->
 <div style="margin-bottom: 20px;">
