@@ -11,7 +11,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
-<title>Home | 南山大学 鷹取研究室</title>
+
+<title>index.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -206,28 +207,20 @@ height: 100%;
 object-fit: cover;
 opacity: 0;
 transform: scale(1.035);
-transition:
-opacity .8s ease,
-transform 5s ease;
+transition: opacity .8s ease, transform 5s ease;
 }
 .slide.active {
 opacity: 1;
 transform: scale(1);
 z-index: 2;
 }
-
 .hero::after {
 content: "";
 position: absolute;
 inset: 0;
 z-index: 3;
 pointer-events: none;
-background:
-linear-gradient(
-180deg,
-transparent 55%,
-rgba(0,30,65,.35) 100%
-);
+background: linear-gradient(180deg, transparent 55%, rgba(0,30,65,.35) 100%);
 }
 .hero-label {
 position: absolute;
@@ -273,7 +266,6 @@ left: 22px;
 .arrow.right {
 right: 22px;
 }
-
 .slider-dots {
 position: absolute;
 z-index: 6;
@@ -301,41 +293,54 @@ background: white;
 
 .container {
 width: 90%;
-max-width: 1120px;
+max-width: 1050px;
 margin: 65px auto 80px;
 }
 .section-label {
+margin-bottom: 10px;
 color: #0070c9;
-font-size: 12px;
+font-size: 11px;
 font-weight: 700;
 letter-spacing: .16em;
-text-transform: uppercase;
-margin-bottom: 6px;
 }
+
 .card {
+position: relative;
 background: white;
-padding: 38px 42px;
+padding: 40px 45px;
 margin-bottom: 28px;
-border-radius: 16px;
 border: 1px solid #e7edf4;
+border-radius: 16px;
 box-shadow: 0 8px 30px rgba(15,23,42,.055);
-transition: transform .25s, box-shadow .25s;
+overflow: hidden;
+transition: transform .25s ease, box-shadow .25s ease;
 }
 .card:hover {
-transform: translateY(-2px);
-box-shadow: 0 12px 35px rgba(15,23,42,.085);
+transform: translateY(-3px);
+box-shadow: 0 14px 38px rgba(15,23,42,.09);
+}
+.card::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 6px;
+height: 100%;
+background: linear-gradient(180deg, #0066c7, #00a9e8);
 }
 .card h2 {
-margin: 0 0 23px;
+margin: 0 0 25px;
+padding-bottom: 17px;
 color: #16324f;
-font-size: 25px;
-border: 0;
-padding: 0;
+font-size: 24px;
+font-weight: 700;
+border-bottom: 1px solid #e8edf3;
 }
 .card p,
 .card li {
-line-height: 1.9;
 color: #475569;
+font-size: 15px;
+line-height: 1.9;
 }
 .new-badge {
 display: inline-block;
@@ -343,9 +348,10 @@ margin-left: 10px;
 padding: 4px 10px;
 vertical-align: middle;
 background: #eaf4ff;
+border: 1px solid #cfe7fb;
 color: #0066c7;
 border-radius: 20px;
-font-size: 12px;
+font-size: 11px;
 font-weight: 700;
 }
 
@@ -366,6 +372,7 @@ transition: .25s;
 .research-item:hover {
 background: #edf6ff;
 border-color: #b9dcfa;
+transform: translateY(-1px);
 }
 
 .topic {
@@ -385,27 +392,41 @@ font-size: 14px;
 font-weight: 500;
 }
 .topic a {
-color: #334155;
+color: #0066c7;
 font-weight: 600;
 text-decoration: none;
-transition: .2s;
+transition: color .2s ease;
 }
 .topic a:hover {
-color: #0070c9;
+color: #00d4ff;
 }
-.topic-link {
-text-align: right;
-margin-top: 25px;
+.poster-link {
+margin-top: 8px;
 }
-.topic-link a,
 .poster-link a {
 color: #0066c7;
 text-decoration: none;
 font-size: 14px;
 font-weight: 600;
+transition: color .2s ease;
 }
-.topic-link a:hover,
 .poster-link a:hover {
+color: #00d4ff;
+text-decoration: underline;
+}
+.topic-link {
+text-align: right;
+margin-top: 25px;
+}
+.topic-link a {
+color: #0066c7;
+text-decoration: none;
+font-size: 14px;
+font-weight: 600;
+transition: color .2s ease;
+}
+.topic-link a:hover {
+color: #00d4ff;
 text-decoration: underline;
 }
 
@@ -416,20 +437,6 @@ text-align: center;
 padding: 35px 20px;
 font-size: 13px;
 letter-spacing: .05em;
-}
-.topic a,
-.topic-link a,
-.poster-link a {
-color: #0066c7;
-text-decoration: none;
-font-weight: 600;
-transition: .2s;
-}
-.topic a:hover,
-.topic-link a:hover,
-.poster-link a:hover {
-color: #00d4ff;
-text-decoration: underline;
 }
 
 .menu-toggle {
@@ -445,6 +452,7 @@ top: 0;
 z-index: 1001;
 border-bottom: 1px solid #e2e8f0;
 }
+
 @media(max-width:768px) {
 header {
 padding: 28px 22px;
@@ -487,6 +495,9 @@ border-radius: 14px;
 left: 25px;
 bottom: 32px;
 }
+.hero-label .small {
+font-size: 11px;
+}
 .hero-label .large {
 font-size: 21px;
 }
@@ -494,12 +505,22 @@ font-size: 21px;
 width: 40px;
 height: 40px;
 }
+.arrow.left {
+left: 12px;
+}
+.arrow.right {
+right: 12px;
+}
 .container {
 width: 92%;
 margin-top: 38px;
+margin-bottom: 55px;
 }
 .card {
-padding: 27px 24px;
+padding: 30px 25px;
+}
+.card h2 {
+font-size: 21px;
 }
 .research-grid {
 grid-template-columns: 1fr;
@@ -532,18 +553,15 @@ WIRELESS SYSTEMS LABORATORY
 </nav>
 <script>
 function toggleMenu() {
-  document.getElementById("nav-menu").classList.toggle("open");
+document.getElementById("nav-menu").classList.toggle("open");
 }
 
 document.querySelectorAll("#nav-menu a").forEach(function(el) {
-  el.addEventListener("click", function() {
-    document.getElementById("nav-menu").classList.remove("open");
-  });
+el.addEventListener("click", function() {
+document.getElementById("nav-menu").classList.remove("open");
+});
 });
 </script>
-<!-- ==============================
-     HERO
-============================== -->
 <div class="hero-section">
 <div class="hero">
 <div id="slider-track">
@@ -570,9 +588,9 @@ Wireless Systems Laboratory
 </div>
 <script>
 var images = [
-  "IMG_6700.JPG",
-  "IMG_7560.JPG",
-  "IMG_7628.JPG"
+"IMG_6700.JPG",
+"IMG_7560.JPG",
+"IMG_7628.JPG"
 ];
 
 var currentIndex = 0;
@@ -580,61 +598,47 @@ var track = document.getElementById("slider-track");
 var dots = document.getElementById("slider-dots");
 
 images.forEach(function(src, index) {
+var img = document.createElement("img");
+img.src = src;
+img.className = "slide";
+track.appendChild(img);
 
-  var img = document.createElement("img");
-  img.src = src;
-  img.className = "slide";
-  track.appendChild(img);
-
-  var dot = document.createElement("button");
-  dot.className = "dot";
-  dot.onclick = function() {
-    currentIndex = index;
-    updateSlider();
-  };
-
-  dots.appendChild(dot);
+var dot = document.createElement("button");
+dot.className = "dot";
+dot.onclick = function() {
+currentIndex = index;
+updateSlider();
+};
+dots.appendChild(dot);
 });
 
-
 function updateSlider() {
+var slides = document.querySelectorAll(".slide");
+var allDots = document.querySelectorAll(".dot");
 
-  var slides = document.querySelectorAll(".slide");
-  var allDots = document.querySelectorAll(".dot");
+slides.forEach(function(slide, index) {
+slide.classList.toggle("active", index === currentIndex);
+});
 
-  slides.forEach(function(slide, index) {
-    slide.classList.toggle("active", index === currentIndex);
-  });
-
-  allDots.forEach(function(dot, index) {
-    dot.classList.toggle("active", index === currentIndex);
-  });
+allDots.forEach(function(dot, index) {
+dot.classList.toggle("active", index === currentIndex);
+});
 }
-
 
 function nextImage() {
-  currentIndex = (currentIndex + 1) % images.length;
-  updateSlider();
+currentIndex = (currentIndex + 1) % images.length;
+updateSlider();
 }
-
 
 function prevImage() {
-  currentIndex =
-    (currentIndex - 1 + images.length) % images.length;
-
-  updateSlider();
+currentIndex = (currentIndex - 1 + images.length) % images.length;
+updateSlider();
 }
 
-
 updateSlider();
-
 setInterval(nextImage, 10000);
 </script>
-<!-- ==============================
-     CONTENT
-============================== -->
 <div class="container">
-<!-- Laboratory -->
 <div class="card">
 <div class="section-label">
 ABOUT US
@@ -646,7 +650,6 @@ ABOUT US
 本研究室では通信・レーダ融合技術（ISAC）、無線通信システム、信号処理に関する研究を行っています。
 </p>
 </div>
-<!-- Research -->
 <div class="card">
 <div class="section-label">
 RESEARCH
@@ -669,7 +672,6 @@ MIMO・ビームフォーミング
 </div>
 </div>
 </div>
-<!-- Topics -->
 <div class="card">
 <div class="section-label">
 NEWS &amp; TOPICS
@@ -681,7 +683,7 @@ NEWS &amp; TOPICS
 <div class="topic-date">
 2026.09.07
 </div>
-<p><a href="topics.html#topic1"> 若手研究者奨励賞受賞 </a></p>
+<p><a href="topics.html#topic1">若手研究者奨励賞受賞</a></p>
 </div>
 <div class="topic">
 <div class="topic-date">
@@ -689,9 +691,9 @@ NEWS &amp; TOPICS
 </div>
 <div>
 <a href="topics.html#topic2">南山大学オープンキャンパスについて</a>
-<div class="poster-link" style="margin-top:8px;">
+<div class="poster-link">
 <p><a href="https://st-nanzan-u.app.box.com/s/39ozu5cko8ljr9k2ec792qptf1nd1tko">研究紹介ポスター
-DL → </a></p>
+DL →</a></p>
 </div>
 </div>
 </div>
@@ -699,12 +701,10 @@ DL → </a></p>
 <div class="topic-date">
 2026.06.24
 </div>
-<p><a href="topics.html#topic3">
-「セントラルヘリコプターサービス株式会社」の工場見学</a></p>
+<p><a href="topics.html#topic3">「セントラルヘリコプターサービス株式会社」の工場見学</a></p>
 </div>
 <div class="topic-link">
-<p><a href="topics.html"> 過去のトピックス一覧を見る → </a></p>
-</div>
+<p><a href="topics.html">過去のトピックス一覧を見る →</a></p>
 </div>
 </div>
 </div>
