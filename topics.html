@@ -12,7 +12,7 @@
 
 
 
-<title>Topics | 南山大学 鷹取研究室</title>
+<title>topics.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -87,127 +87,335 @@ if (window.hljs) {
 
 
 <style>
-html,body{
-margin:0;
-padding:0;
-width:100%;
-background:#E3F2FD;
-font-family:Arial,sans-serif;
-}
-
-.main-container{
-max-width:100% !important;
-width:100% !important;
-margin:0 !important;
-padding:0 !important;
-}
-
-header{
-width: 100%;
-background: #0055b3; color: #ffffff;
-text-align: center;
-padding: 60px 20px;
+* {
 box-sizing: border-box;
-border-bottom: 3px solid #00d4ff;
 }
-header h1 { margin: 0; font-size: 42px; font-weight: 700; letter-spacing: 2px; }
-header p { margin: 12px 0 0 0; font-size: 18px; color: #e2e8f0; font-weight: 300; letter-spacing: 1px; }
-
-nav { width: 100%;
-background: #0055b3; display: flex; justify-content: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-nav a {
-color: #e2e8f0;
-text-decoration: none; padding: 18px 28px; font-weight: 500; font-size: 15px; transition: all 0.3s ease;
-position: relative;
+html {
+scroll-behavior: smooth;
 }
-nav a:hover { color: #ffffff;
-background: rgba(255, 255, 255, 0.1); }
-nav a.active { color: #00d4ff; font-weight: 700; }
-nav a.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: #00d4ff; }
-
-.container{ width:90%; max-width:1200px; margin:40px auto; }
-.card{ background:white; padding:30px; margin-bottom:30px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.06); border-top: 4px solid #0066cc;
+html, body {
+margin: 0;
+padding: 0;
+width: 100%;
+background: #f5f8fc;
+font-family: Arial, "Noto Sans JP", sans-serif;
+color: #1e293b;
 }
-.card h2{ margin-top:0; color: #0066cc; font-size: 22px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 20px;
+.main-container {
+max-width: 100% !important;
+width: 100% !important;
+margin: 0 !important;
+padding: 0 !important;
 }
 
-.card a { color: #0066cc; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
-.card a:hover { color: #00d4ff; text-decoration: underline; }
-.link-list a { display: block; margin-bottom: 10px;
+header {
+width: 100%;
+background: linear-gradient(135deg, #003d82 0%, #0066c7 100%);
+color: white;
+padding: 38px 6%;
 }
-
-footer{
-background:#0055b3;
-color:white;
-text-align:center;
-padding:25px;
+.header-inner {
+max-width: 1200px;
+margin: 0 auto;
 }
-
-.blog-post {
-margin-bottom: 40px; 
-padding-bottom: 30px;
-border-bottom: 2px dashed #cbd5e1; 
-}
-
-.blog-post:last-child {
-border-bottom: none;
-margin-bottom: 10px;
-padding-bottom: 0;
-}
-
-.post-meta {
-color: #64748b;
-font-size: 14px;
-margin-bottom: 8px;
-font-weight: 500;
-}
-.blog-post h3 {
-margin: 0 0 15px 0;
-color: #0066cc; 
-font-size: 20px;
+header h1 {
+margin: 0;
+font-size: 38px;
+font-weight: 700;
+letter-spacing: 0.08em;
 }
 header h1 a {
-text-decoration: none; 
-color: inherit; 
+color: white;
+text-decoration: none;
+}
+header p {
+margin: 8px 0 0;
+font-size: 15px;
+letter-spacing: 0.16em;
+color: rgba(255,255,255,.8);
 }
 
-.catchcopy1{
-text-align: center;
-color: #0066cc;
-font-size: 50px;
-font-weight: 700;
-margin-bottom: 40px;
-}
-
-.menu-toggle { display: none; background: #0055b3; color: white; text-align: center; padding: 15px; cursor: pointer; font-size: 24px; border-bottom: 1px solid #004494;
-
+nav {
+width: 100%;
+min-height: 60px;
+background: rgba(255,255,255,.97);
+display: flex;
+justify-content: center;
+align-items: stretch;
 position: sticky;
 top: 0;
-z-index: 1001; }
+z-index: 1000;
+border-bottom: 1px solid #e2e8f0;
+box-shadow: 0 3px 15px rgba(15,23,42,.05);
+}
+nav a {
+display: flex;
+align-items: center;
+color: #475569;
+text-decoration: none;
+padding: 0 25px;
+font-size: 14px;
+font-weight: 600;
+transition: .25s;
+position: relative;
+}
+nav a:hover {
+color: #0066c7;
+background: #f8fafc;
+}
+nav a.active {
+color: #0055b3;
+}
+nav a.active::after {
+content: "";
+position: absolute;
+left: 25%;
+right: 25%;
+bottom: 0;
+height: 3px;
+border-radius: 3px 3px 0 0;
+background: #0077dd;
+}
 
-@media(max-width:768px){
-.menu-toggle { display: block; }
-nav { display: none; flex-direction: column;
-position: sticky; 
-top: 60px;}
-nav.open { display: flex; }
-nav a { text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
-header{ padding:40px 15px; }
-header h1{ font-size:30px; }
-.hero{ height: 250px !important; }
-.container{ width:95%; }
-.catchcopy1 {
-font-size: 35px;
+.page-title {
+padding: 75px 20px 65px;
+text-align: center;
+background:
+radial-gradient(circle at 80% 10%, #dbeeff 0, transparent 32%),
+#f5f8fc;
+}
+.page-title .english {
+margin-bottom: 10px;
+color: #0070c9;
+font-size: 13px;
+font-weight: 700;
+letter-spacing: .2em;
+}
+.page-title h1 {
+margin: 0;
+color: #16324f;
+font-size: 42px;
+font-weight: 700;
+letter-spacing: .05em;
+}
+.page-title-line {
+width: 45px;
+height: 3px;
+margin: 20px auto 0;
+border-radius: 3px;
+background: #0070c9;
+}
+
+.introduction {
+width: 90%;
+max-width: 850px;
+margin: 15px auto 55px;
+text-align: center;
+}
+.introduction .small {
+margin-bottom: 10px;
+color: #0070c9;
+font-size: 12px;
+font-weight: 700;
+letter-spacing: .18em;
+}
+.introduction h2 {
+margin: 0;
+color: #16324f;
+font-size: 30px;
+font-weight: 700;
+}
+.introduction p {
+max-width: 700px;
+margin: 18px auto 0;
+color: #64748b;
+font-size: 15px;
+line-height: 2;
+}
+
+.container {
+width: 90%;
+max-width: 1000px;
+margin: 0 auto 90px;
+}
+.topics-card {
+position: relative;
+background: white;
+padding: 15px 45px;
+border: 1px solid #e7edf4;
+border-radius: 16px;
+box-shadow: 0 8px 30px rgba(15,23,42,.055);
+overflow: hidden;
+}
+.topics-card::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 6px;
+height: 100%;
+background: linear-gradient(180deg, #0066c7, #00a9e8);
+}
+.blog-post {
+padding: 34px 0;
+border-bottom: 1px solid #e8edf3;
+scroll-margin-top: 90px;
+}
+.blog-post:last-child {
+border-bottom: none;
+}
+.post-meta {
+display: inline-block;
+margin-bottom: 10px;
+color: #0070c9;
+font-size: 13px;
+font-weight: 700;
+letter-spacing: .05em;
+}
+.blog-post h3 {
+margin: 0 0 15px;
+color: #16324f;
+font-size: 21px;
+font-weight: 700;
+line-height: 1.5;
+}
+.blog-post p {
+margin: 0 0 15px;
+color: #475569;
+font-size: 15px;
+line-height: 1.9;
+}
+.blog-post ul {
+margin: 15px 0;
+padding-left: 22px;
+color: #475569;
+}
+.blog-post li {
+margin-bottom: 10px;
+font-size: 14px;
+line-height: 1.8;
+}
+
+.topic-links {
+margin-top: 20px;
+padding: 17px 20px;
+background: #f8fbff;
+border: 1px solid #e1ecf7;
+border-radius: 10px;
+}
+.topic-links a {
+display: block;
+position: relative;
+padding: 7px 0 7px 18px;
+color: #0066c7;
+font-size: 14px;
+font-weight: 600;
+text-decoration: none;
+transition: .2s;
+}
+.topic-links a::before {
+content: "›";
+position: absolute;
+left: 2px;
+font-size: 18px;
+line-height: 16px;
+}
+.topic-links a:hover {
+color: #00a0df;
+}
+
+footer {
+background: linear-gradient(135deg, #003d82 0%, #0066c7 100%);
+color: rgba(255,255,255,.78);
+text-align: center;
+padding: 35px 20px;
+font-size: 13px;
+letter-spacing: .05em;
+}
+
+.menu-toggle {
+display: none;
+background: white;
+color: #0055b3;
+text-align: center;
+padding: 14px;
+cursor: pointer;
+font-size: 23px;
+position: sticky;
+top: 0;
+z-index: 1001;
+border-bottom: 1px solid #e2e8f0;
+}
+
+@media(max-width:768px) {
+header {
+padding: 28px 22px;
+}
+header h1 {
+font-size: 28px;
+}
+header p {
+font-size: 12px;
+}
+.menu-toggle {
+display: block;
+}
+nav {
+display: none;
+flex-direction: column;
+position: sticky;
+top: 53px;
+}
+nav.open {
+display: flex;
+}
+nav a {
+justify-content: center;
+padding: 15px;
+border-bottom: 1px solid #edf2f7;
+}
+nav a.active::after {
+display: none;
+}
+.page-title {
+padding: 50px 20px 45px;
+}
+.page-title h1 {
+font-size: 32px;
+}
+.introduction {
+margin-bottom: 40px;
+}
+.introduction h2 {
+font-size: 24px;
+}
+.container {
+width: 92%;
+margin-bottom: 55px;
+}
+.topics-card {
+padding: 8px 25px;
+}
+.blog-post {
+padding: 27px 0;
+}
+.blog-post h3 {
+font-size: 19px;
+}
+.blog-post p {
+font-size: 14px;
 }
 }
 </style>
 <header>
+<div class="header-inner">
 <h1>
 <a href="index.html">鷹取研究室</a>
 </h1>
 <p>
-Wireless Systems Laboratory
+WIRELESS SYSTEMS LABORATORY
 </p>
+</div>
 </header>
 <div class="menu-toggle" onclick="toggleMenu()">
 ☰
@@ -222,40 +430,54 @@ Wireless Systems Laboratory
 </nav>
 <script>
 function toggleMenu() {
-  document.getElementById("nav-menu").classList.toggle("open");
+document.getElementById("nav-menu").classList.toggle("open");
 }
 
-// メニュー選択時に閉じる処理
-document.querySelectorAll("#nav-menu a").forEach(el => {
-  el.addEventListener("click", () => {
-    document.getElementById("nav-menu").classList.remove("open");
-  });
+document.querySelectorAll("#nav-menu a").forEach(function(el) {
+el.addEventListener("click", function() {
+document.getElementById("nav-menu").classList.remove("open");
+});
 });
 </script>
-<h1 class="catchcopy1">
+<div class="page-title">
+<div class="english">
+TOPICS
+</div>
+<h1>
 Topics
 </h1>
-<div class="container">
-<div class="card">
+<div class="page-title-line">
+
+</div>
+</div>
+<div class="introduction">
+<div class="small">
+NEWS &amp; EVENTS
+</div>
 <h2>
-Topics
+研究室の最新情報
 </h2>
-<!-- 記事 1 -->
+<p>
+学会発表、受賞、イベント、研究室活動など、鷹取研究室の最新情報を紹介します。
+</p>
+</div>
+<div class="container">
+<div class="topics-card">
 <div id="topic1" class="blog-post">
 <div class="post-meta">
-2026/09/07
+2026 / 09 / 07
 </div>
 <h3>
 若手研究者奨励賞受賞
 </h3>
 <p>
 修士1年の大竹 亜依さん、松波 翔也さんがIEEE VTS Tokyo / Japan Chapter
-より若手研究者奨励賞受を受賞しました。
+より若手研究者奨励賞を受賞しました。
 </p>
 </div>
 <div id="topic2" class="blog-post">
 <div class="post-meta">
-2026/07/08
+2026 / 07 / 08
 </div>
 <h3>
 南山大学オープンキャンパスについて
@@ -265,63 +487,56 @@ Topics
 </p>
 <ul>
 <li>
-<b>日時：</b> 2026年7月18日(土)、7月19日(日)
+<b>日時：</b>2026年7月18日（土）、7月19日（日）
 </li>
 <li>
-<b>時間：</b> 10:00 ～ 16:00
+<b>時間：</b>10:00 ～ 16:00
 </li>
 </ul>
 <p>
-【鷹取研究室が参加するイベント】
+<b>鷹取研究室が参加するイベント</b>
 </p>
 <ul>
 <li>
-<b>イベント名：</b> 未来をつくる実験室探検ツアー<br> <b>日時：</b>
-2026年7月18日（土）<br> <b>開催時間：</b> ① 12:00～12:20 ② 12:25～12:45
-③ 12:50～13:10
+<b>イベント名：</b>未来をつくる実験室探検ツアー<br><b>日時：</b>2026年7月18日（土）<br><b>開催時間：</b>①
+12:00～12:20　② 12:25～12:45　③ 12:50～13:10
 </li>
-<br>
 <li>
-<b>イベント名：</b> 電子情報工学科の全研究室の研究を20分で<br>
-<b>日時：</b> 2026年7月19日（日）<br> <b>開催時間：</b> ① 13:00～13:20 ②
-13:25～13:45 ③ 13:50～14:10 ④ 14:15～14:35
+<b>イベント名：</b>電子情報工学科の全研究室の研究を20分で<br><b>日時：</b>2026年7月19日（日）<br><b>開催時間：</b>①
+13:00～13:20　② 13:25～13:45　③ 13:50～14:10　④ 14:15～14:35
 </li>
 </ul>
-<div class="hover-link">
-<a href="https://www.nanzan-u.ac.jp/admission/opencampus/" target="_blank">≫
-2026年オープンキャンパス特設サイト</a>
-</ul>
-<p><a href="https://st-nanzan-u.app.box.com/s/39ozu5cko8ljr9k2ec792qptf1nd1tko">≫
-2026年オープンキャンパス 研究紹介ポスター</a></p>
+<div class="topic-links">
+<p><a href="https://www.nanzan-u.ac.jp/admission/opencampus/" target="_blank">2026年オープンキャンパス特設サイト</a>
+<a href="https://st-nanzan-u.app.box.com/s/39ozu5cko8ljr9k2ec792qptf1nd1tko" target="_blank">2026年オープンキャンパス
+研究紹介ポスター</a></p>
 </div>
 </div>
-<!-- 記事 2 -->
 <div id="topic3" class="blog-post">
 <div class="post-meta">
-2026/06/24
+2026 / 06 / 24
 </div>
 <h3>
 工場見学
 </h3>
 <p>
-「セントラルヘリコプターサービス株式会社」の工場を見学をしました。
+「セントラルヘリコプターサービス株式会社」の工場を見学しました。
 </p>
 </div>
-<!-- 次の記事を追加する場合は、ここに同じように div.blog-post を追加 -->
 <div class="blog-post">
 <div class="post-meta">
-2026/03/19
+2026 / 03 / 19
 </div>
 <h3>
 南山大学大学院 修士論文 優秀論文賞受賞
 </h3>
 <p>
-修士2年の小畠慎二郎さんが2025年度優秀論文賞を受賞しました。
+修士2年の小畠 慎二郎さんが2025年度優秀論文賞を受賞しました。
 </p>
 </div>
 <div class="blog-post">
 <div class="post-meta">
-2026/03/09～2026/03/13
+2026 / 03 / 09 ～ 2026 / 03 / 13
 </div>
 <h3>
 学会口頭発表
@@ -332,13 +547,13 @@ Topics
 </div>
 <div class="blog-post">
 <div class="post-meta">
-2025/09/08～2025/09/12
+2025 / 09 / 08 ～ 2025 / 09 / 12
 </div>
 <h3>
 学会口頭発表
 </h3>
 <p>
-電子情報通信学会ソサエティ大会に修士2年の2名が参加しました。
+電子情報通信学会ソサイエティ大会に修士2年の2名が参加しました。
 </p>
 </div>
 </div>

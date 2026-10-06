@@ -12,7 +12,7 @@
 
 
 
-<title>研究紹介 | 南山大学 鷹取研究室</title>
+<title>research.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -87,167 +87,396 @@ if (window.hljs) {
 
 
 <style>
-html,body{
-margin:0;
-padding:0;
-width:100%;
-background:#E3F2FD;
-font-family:Arial,sans-serif;
+* {
+box-sizing: border-box;
 }
-
-.main-container{
-max-width:100% !important;
-width:100% !important;
-margin:0 !important;
-padding:0 !important;
+html {
+scroll-behavior: smooth;
+}
+html, body {
+margin: 0;
+padding: 0;
+width: 100%;
+background: #f5f8fc;
+font-family: Arial, "Noto Sans JP", sans-serif;
+color: #1e293b;
+}
+.main-container {
+max-width: 100% !important;
+width: 100% !important;
+margin: 0 !important;
+padding: 0 !important;
 }
 
 header {
 width: 100%;
-background: #0055b3; color: #ffffff;
-text-align: center;
-padding: 60px 20px;
-box-sizing: border-box;
-border-bottom: 3px solid #00d4ff;
+background: linear-gradient(135deg, #003d82 0%, #0066c7 100%);
+color: white;
+padding: 38px 6%;
+}
+.header-inner {
+max-width: 1200px;
+margin: 0 auto;
 }
 header h1 {
 margin: 0;
-font-size: 42px;
+font-size: 38px;
 font-weight: 700;
-letter-spacing: 2px;
+letter-spacing: 0.08em;
+}
+header h1 a {
+color: white;
+text-decoration: none;
 }
 header p {
-margin: 12px 0 0 0;
-font-size: 18px;
-color: #e2e8f0;
-font-weight: 300;
-letter-spacing: 1px;
+margin: 8px 0 0;
+font-size: 15px;
+letter-spacing: 0.16em;
+color: rgba(255,255,255,.8);
 }
 
 nav {
-background: #0055b3; display: flex;
+width: 100%;
+min-height: 60px;
+background: rgba(255,255,255,.97);
+display: flex;
 justify-content: center;
-flex-wrap: wrap;
+align-items: stretch;
 position: sticky;
 top: 0;
 z-index: 1000;
-box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+border-bottom: 1px solid #e2e8f0;
+box-shadow: 0 3px 15px rgba(15,23,42,.05);
 }
 nav a {
-color: #e2e8f0;
+display: flex;
+align-items: center;
+color: #475569;
 text-decoration: none;
-padding: 18px 28px;
-font-weight: 500;
-font-size: 15px;
-transition: all 0.3s ease;
+padding: 0 25px;
+font-size: 14px;
+font-weight: 600;
+transition: .25s;
 position: relative;
 }
 nav a:hover {
-color: #ffffff;
-background: rgba(255, 255, 255, 0.1);
+color: #0066c7;
+background: #f8fafc;
 }
 nav a.active {
-color: #00d4ff;
-font-weight: 700;
+color: #0055b3;
 }
 nav a.active::after {
-content: '';
+content: "";
 position: absolute;
+left: 25%;
+right: 25%;
 bottom: 0;
-left: 0;
-width: 100%;
 height: 3px;
-background: #00d4ff;
+border-radius: 3px 3px 0 0;
+background: #0077dd;
 }
 
-.container{
-width:90%;
-max-width:1200px;
-margin:40px auto;
-}
-
-.catchcopy1{
+.page-title {
+padding: 75px 20px 65px;
 text-align: center;
-color: #0066cc;
-font-size: 50px;
+background:
+radial-gradient(circle at 80% 10%, #dbeeff 0, transparent 32%),
+#f5f8fc;
+}
+.page-title .english {
+margin-bottom: 10px;
+color: #0070c9;
+font-size: 13px;
 font-weight: 700;
-margin-bottom: 40px;
+letter-spacing: .2em;
 }
-.catchcopy {
-text-align: center;
-color: #0066cc;
-font-size: 25px;
-font-weight: 700;
-margin-bottom: 40px;
-}
-
-.card{
-background:white;
-padding:30px;
-margin-bottom:30px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,.06);
-border-top: 4px solid #0066cc; }
-
-.card h2{
-margin-top:0;
-color: #0066cc; font-size: 22px;
-border-bottom: 1px solid #e2e8f0;
-padding-bottom: 10px;
-margin-bottom: 20px;
-}
-
-.card p {
-color: #334155;
-font-size: 16px;
-line-height: 1.8;
+.page-title h1 {
 margin: 0;
-text-align: justify;
-margin: 15px 0;
+color: #16324f;
+font-size: 42px;
+font-weight: 700;
+letter-spacing: .05em;
+}
+.page-title-line {
+width: 45px;
+height: 3px;
+margin: 20px auto 0;
+border-radius: 3px;
+background: #0070c9;
 }
 
-footer{
-background:#0055b3;
-color:white;
-text-align:center;
-padding:25px;
+.introduction {
+width: 90%;
+max-width: 1000px;
+margin: 15px auto 60px;
+text-align: center;
 }
-header h1 a {
-text-decoration: none; 
-color: inherit; 
+.introduction .small {
+margin-bottom: 10px;
+color: #0070c9;
+font-size: 12px;
+font-weight: 700;
+letter-spacing: .18em;
+}
+.introduction h2 {
+margin: 0;
+color: #16324f;
+font-size: 32px;
+font-weight: 700;
+}
+.introduction p {
+max-width: 750px;
+margin: 20px auto 0;
+color: #64748b;
+font-size: 16px;
+line-height: 2;
 }
 
-.menu-toggle { display: none; background: #0055b3; color: white; text-align: center; padding: 15px; cursor: pointer; font-size: 24px; border-bottom: 1px solid #004494; 
+.keyword-area {
+width: 90%;
+max-width: 1050px;
+margin: 0 auto 65px;
+}
+.keyword-title {
+margin-bottom: 17px;
+color: #64748b;
+text-align: center;
+font-size: 12px;
+font-weight: 700;
+letter-spacing: .16em;
+}
+.keywords {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 10px;
+}
+.keyword {
+padding: 9px 17px;
+background: #eaf4ff;
+border: 1px solid #cfe7fb;
+border-radius: 30px;
+color: #0066c7;
+font-size: 13px;
+font-weight: 600;
+}
+
+.card-number {
+margin-bottom: 12px;
+color: #0070c9;
+font-size: 12px;
+font-weight: 700;
+letter-spacing: .15em;
+}
+.container {
+width: 90%;
+max-width: 1120px;
+margin: 65px auto 80px;
+}
+.section-label {
+color: #0070c9;
+font-size: 12px;
+font-weight: 700;
+letter-spacing: .16em;
+text-transform: uppercase;
+margin-bottom: 6px;
+}
+.card {
+background: white;
+padding: 38px 42px;
+margin-bottom: 28px;
+border-radius: 16px;
+border: 1px solid #e7edf4;
+box-shadow: 0 8px 30px rgba(15,23,42,.055);
+transition: transform .25s, box-shadow .25s;
+}
+.card:hover {
+transform: translateY(-2px);
+box-shadow: 0 12px 35px rgba(15,23,42,.085);
+}
+.card h2 {
+margin: 0 0 23px;
+color: #16324f;
+font-size: 25px;
+border: 0;
+padding: 0;
+}
+.card p,
+.card li {
+line-height: 1.9;
+color: #475569;
+}
+.new-badge {
+display: inline-block;
+margin-left: 10px;
+padding: 4px 10px;
+vertical-align: middle;
+background: #eaf4ff;
+color: #0066c7;
+border-radius: 20px;
+font-size: 12px;
+font-weight: 700;
+}
+
+.research-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 13px;
+}
+.research-item {
+padding: 18px 20px;
+background: #f8fbff;
+border: 1px solid #e1ecf7;
+border-radius: 10px;
+font-weight: 600;
+color: #29445f;
+transition: .25s;
+}
+.research-item:hover {
+background: #edf6ff;
+border-color: #b9dcfa;
+}
+
+.topic {
+display: grid;
+grid-template-columns: 120px 1fr;
+align-items: center;
+gap: 20px;
+padding: 19px 4px;
+border-bottom: 1px solid #e8edf3;
+}
+.topic:last-of-type {
+border-bottom: none;
+}
+.topic-date {
+color: #94a3b8;
+font-size: 14px;
+font-weight: 500;
+}
+.topic a {
+color: #334155;
+font-weight: 600;
+text-decoration: none;
+transition: .2s;
+}
+.topic a:hover {
+color: #0070c9;
+}
+.topic-link {
+text-align: right;
+margin-top: 25px;
+}
+.topic-link a,
+.poster-link a {
+color: #0066c7;
+text-decoration: none;
+font-size: 14px;
+font-weight: 600;
+}
+.topic-link a:hover,
+.poster-link a:hover {
+text-decoration: underline;
+}
+
+footer {
+background: linear-gradient(135deg, #003d82 0%, #0066c7 100%);
+color: rgba(255,255,255,.78);
+text-align: center;
+padding: 35px 20px;
+font-size: 13px;
+letter-spacing: .05em;
+}
+
+.menu-toggle {
+display: none;
+background: white;
+color: #0055b3;
+text-align: center;
+padding: 14px;
+cursor: pointer;
+font-size: 23px;
 position: sticky;
 top: 0;
-z-index: 1001;}
-
-@media(max-width:768px){
-.menu-toggle { display: block; }
-nav { display: none; flex-direction: column;
-position: sticky; 
-top: 60px;}
-nav.open { display: flex; }
-nav a { text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
-header{ padding:40px 15px; }
-header h1{ font-size:30px; }
-.hero{ height: 250px !important; }
-.container{ width:95%; }
-.card h2{ font-size:17px; }
-.catchcopy1 {
-font-size: 35px;
+z-index: 1001;
+border-bottom: 1px solid #e2e8f0;
+}
+@media(max-width:768px) {
+header {
+padding: 28px 22px;
+}
+header h1 {
+font-size: 28px;
+}
+header p {
+font-size: 12px;
+}
+.menu-toggle {
+display: block;
+}
+nav {
+display: none;
+flex-direction: column;
+position: sticky;
+top: 53px;
+}
+nav.open {
+display: flex;
+}
+nav a {
+justify-content: center;
+padding: 15px;
+border-bottom: 1px solid #edf2f7;
+}
+nav a.active::after {
+display: none;
+}
+.hero-section {
+padding-top: 20px;
+}
+.hero {
+width: 94%;
+height: 330px;
+border-radius: 14px;
+}
+.hero-label {
+left: 25px;
+bottom: 32px;
+}
+.hero-label .large {
+font-size: 21px;
+}
+.arrow {
+width: 40px;
+height: 40px;
+}
+.container {
+width: 92%;
+margin-top: 38px;
+}
+.card {
+padding: 27px 24px;
+}
+.research-grid {
+grid-template-columns: 1fr;
+}
+.topic {
+grid-template-columns: 1fr;
+gap: 5px;
 }
 }
 </style>
 <header>
+<div class="header-inner">
 <h1>
 <a href="index.html">鷹取研究室</a>
 </h1>
 <p>
-Wireless Systems Laboratory
+WIRELESS SYSTEMS LABORATORY
 </p>
+</div>
 </header>
-<div id="hamburger" class="menu-toggle" onclick="toggleMenu()">
+<div class="menu-toggle" onclick="toggleMenu()">
 ☰
 </div>
 <nav id="nav-menu">
@@ -260,42 +489,86 @@ Wireless Systems Laboratory
 </nav>
 <script>
 function toggleMenu() {
-  document.getElementById("nav-menu").classList.toggle("open");
+    document.getElementById("nav-menu").classList.toggle("open");
 }
 
-// メニュー選択時に閉じる処理
-document.querySelectorAll("#nav-menu a").forEach(el => {
-  el.addEventListener("click", () => {
-    document.getElementById("nav-menu").classList.remove("open");
-  });
+document.querySelectorAll("#nav-menu a").forEach(function(el) {
+    el.addEventListener("click", function() {
+        document.getElementById("nav-menu").classList.remove("open");
+    });
 });
 </script>
-<h1 class="catchcopy1">
+<div class="page-title">
+<div class="english">
+RESEARCH
+</div>
+<h1>
 研究紹介
 </h1>
-<div class="container">
-<h1 class="catchcopy">
+<div class="page-title-line">
+
+</div>
+</div>
+<div class="introduction">
+<div class="small">
+OUR VISION
+</div>
+<h2>
 ワイヤレス（無線）の新たな力
-</h1>
+</h2>
+<p>
+次世代の通信・センシング技術を通じて、限られた電波資源をより柔軟に、より効率的に活用するワイヤレスシステムの実現を目指しています。
+</p>
+</div>
+<div class="keyword-area">
+<div class="keyword-title">
+RESEARCH KEYWORDS
+</div>
+<div class="keywords">
+<div class="keyword">
+Wireless
+</div>
+<div class="keyword">
+6G
+</div>
+<div class="keyword">
+ISAC
+</div>
+<div class="keyword">
+Radar
+</div>
+<div class="keyword">
+Signal Processing
+</div>
+<div class="keyword">
+Spectrum Sharing
+</div>
+</div>
+</div>
+<div class="container">
 <div class="card">
+<div class="card-number">
+01 / WIRELESS NETWORK
+</div>
 <h2>
 ワイヤレスで未来を変える力
 </h2>
 <p>
-ワイヤレスで未来を変える力
 これからの社会では、「人」や「あらゆるモノ」がつながり、協力しながら社会課題を解決し、豊かな社会を創っていくことがとても大切になっていきます。将来のネットワークでは、スマートフォンやパソコンだけでなく、ロボットや車などの多様なIoT（Internet
 of
 Things）機器でも通信が利用され、あらゆる分野の課題を解決していくことが期待されています。
 </p>
 <p>
-こうした未来の社会を支えるためには、「ワイヤレス（無線）」の革新が欠かせません。ワイヤレスは、電波を使ってスマートフォンなどのさまざまな機器をつなぐ技術であり、特に人が感じる「使いやすさ」や「快適さ」に直接影響します。だからこそ、ネットワークの新たな使い方に合わせた進化が必要なのです。
+こうした未来の社会を支えるためには、「ワイヤレス（無線）」の革新が欠かせません。ワイヤレスは、電波を使ってスマートフォンなどのさまざまな機器をつなぐ技術であり、特に人が感じる「使いやすさや「快適さ」に直接影響します。だからこそ、ネットワークの新たな使い方に合わせた進化が必要なのです。
 </p>
 <p>
-ワイヤレスシステムにおいて利用できる周波数には限りがあるため、周波数は「資源」として扱われます。限られた周波数資源をいかに有効に使うかが、ワイヤレスの活用範囲拡大のカギとなります。この課題を解決するには、多数のワイヤレスシステムが同じ空間で共存できるよう協力し、周波数資源を効率的に活用する手法が求められます。また、今後さらに利用シーンが増えることを考えると、陸上通信、衛星通信、放送、レーダー、無線電力伝送など、多様なワイヤレスシステムがこれまで以上に適切に周波数を賢く棲み分け、共用する方法の確立も必要です。
-私たちの研究室では、周囲の環境や利用状況に応じて、周波数を上手に使い分け、共用する新しい仕組みを研究しています。これによって、たくさんのワイヤレスシステムが同時に使われても、快適に通信できるような未来を目指しています。
+ワイヤレスシステムにおいて利用できる周波数には限りがあるため、周波数は「資源」として扱われます。限られた周波数資源をいかに有効に使うかが、ワイヤレスの活用範囲拡大のカギとなります。この課題を解決するには、多数のワイヤレスシステムが同じ空間で共存できるよう協力し、周波数資源を効率的に活用する手法が求められます。また、今後さらに利用シーンが増えることを考えると、陸上通信、衛星通信、放送、レーダー、無線電力伝送など、多様なワイヤレスシステムがこれまで以上に適切に周波数を賢く棲み分け、共用する方法の確立も必要です。私たちの研究室では、周囲の環境や利用状況に応じて、周波数を上手に使い分け、共用する新しい仕組みを研究しています。これによって、たくさんのワイヤレスシステムが同時に使われても、快適に通信できるような未来を目指しています。
 </p>
 </div>
 <div class="card">
+<div class="card-number">
+02 / ISAC &amp; RADAR
+</div>
 <h2>
 無線でできることはどんどん広がる
 </h2>
@@ -311,6 +584,9 @@ Sensing and Communication）」が主要技術の一つになると予想され�
 </p>
 </div>
 <div class="card">
+<div class="card-number">
+03 / FUTURE WIRELESS
+</div>
 <h2>
 誰もが自由に使える未来のワイヤレスへ
 </h2>
@@ -318,7 +594,7 @@ Sensing and Communication）」が主要技術の一つになると予想され�
 私たちはこのような研究を通じて、誰もが簡単にワイヤレスシステムを活用し、新しい使い方を考えて実現できる世界を目指しています。「使えるシステムに合わせて利用する」のではなく、「使いたい方法に合わせてシステムが応えてくれる」ようになれば、複雑なワイヤレスシステムを意識せずにワイヤレスを使いこなしていけるようになると考えているのです。
 </p>
 <p>
-周波数という限られた資源を有効に使いながら、利用する人の立場に立ったワイヤレスシステムの研究に取り組み、誰もが自由にワイヤレスを使っていける未来につなげていくことが、私たちの目標です。
+周波数という限られた資源を有効に使いながら、利用する人の立場に立ったワイヤレスシステムの研究に取り組み、誰もが自由にワイヤレスを使っていける未来につなげていくことが私たちの目標です。
 </p>
 </div>
 </div>

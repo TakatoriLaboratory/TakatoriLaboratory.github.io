@@ -11,7 +11,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
-<title>研究業績 | 南山大学 鷹取研究室</title>
+
+<title>publications.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -86,159 +87,373 @@ if (window.hljs) {
 
 
 <style>
-html,body{
-margin:0;
-padding:0;
-width:100%;
-background:#E3F2FD;
-font-family:Arial,sans-serif;
+* {
+box-sizing: border-box;
 }
-
-.main-container{
-max-width:100% !important;
-width:100% !important;
-margin:0 !important;
-padding:0 !important;
+html {
+scroll-behavior: smooth;
+}
+html, body {
+margin: 0;
+padding: 0;
+width: 100%;
+background: #f5f8fc;
+font-family: Arial, "Noto Sans JP", sans-serif;
+color: #1e293b;
+}
+.main-container {
+max-width: 100% !important;
+width: 100% !important;
+margin: 0 !important;
+padding: 0 !important;
 }
 
 header {
 width: 100%;
-background: #0055b3; color: #ffffff;
-text-align: center;
-padding: 60px 20px;
-box-sizing: border-box;
-border-bottom: 3px solid #00d4ff;
+background: linear-gradient(135deg, #003d82 0%, #0066c7 100%);
+color: white;
+padding: 38px 6%;
+}
+.header-inner {
+max-width: 1200px;
+margin: 0 auto;
 }
 header h1 {
 margin: 0;
-font-size: 42px;
+font-size: 38px;
 font-weight: 700;
-letter-spacing: 2px;
+letter-spacing: 0.08em;
+}
+header h1 a {
+color: white;
+text-decoration: none;
 }
 header p {
-margin: 12px 0 0 0;
-font-size: 18px;
-color: #e2e8f0;
-font-weight: 300;
-letter-spacing: 1px;
+margin: 8px 0 0;
+font-size: 15px;
+letter-spacing: 0.16em;
+color: rgba(255,255,255,.8);
 }
 
 nav {
-background: #0055b3; display: flex;
+width: 100%;
+min-height: 60px;
+background: rgba(255,255,255,.97);
+display: flex;
 justify-content: center;
-flex-wrap: wrap;
+align-items: stretch;
 position: sticky;
 top: 0;
 z-index: 1000;
-box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+border-bottom: 1px solid #e2e8f0;
+box-shadow: 0 3px 15px rgba(15,23,42,.05);
 }
 nav a {
-color: #e2e8f0;
+display: flex;
+align-items: center;
+color: #475569;
 text-decoration: none;
-padding: 18px 28px;
-font-weight: 500;
-font-size: 15px;
-transition: all 0.3s ease;
+padding: 0 25px;
+font-size: 14px;
+font-weight: 600;
+transition: .25s;
 position: relative;
 }
 nav a:hover {
-color: #ffffff;
-background: rgba(255, 255, 255, 0.1);
+color: #0066c7;
+background: #f8fafc;
 }
 nav a.active {
-color: #00d4ff;
-font-weight: 700;
+color: #0055b3;
 }
 nav a.active::after {
-content: '';
+content: "";
 position: absolute;
+left: 25%;
+right: 25%;
 bottom: 0;
-left: 0;
-width: 100%;
 height: 3px;
-background: #00d4ff;
+border-radius: 3px 3px 0 0;
+background: #0077dd;
 }
 
-.container{
-width:90%;
-max-width:1200px;
-margin:40px auto;
-}
-.card{
-background:white;
-padding:30px;
-margin-bottom:30px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,.06);
-border-top: 4px solid #0066cc; 
-}
-.card h2{
-margin-top:0;
-color: #0066cc; 
-font-size: 22px;
-border-bottom: 1px solid #e2e8f0;
-padding-bottom: 10px;
-}
-.card h3{
-color: #1e293b;
-font-size: 18px;
-}
-.card ul {
-padding-left: 20px;
-}
-.card li {
-margin-bottom: 8px;
-color: #475569;
-}
-
-footer{
-background:#0055b3;
-color:white;
-text-align:center;
-padding:25px;
-}
-header h1 a {
-text-decoration: none; 
-color: inherit; 
-}
-
-.catchcopy1{
+.page-title {
+padding: 75px 20px 65px;
 text-align: center;
-color: #0066cc;
-font-size: 50px;
+background:
+radial-gradient(circle at 80% 10%, #dbeeff 0, transparent 32%),
+#f5f8fc;
+}
+.page-title .english {
+margin-bottom: 10px;
+color: #0070c9;
+font-size: 13px;
 font-weight: 700;
-margin-bottom: 40px;
+letter-spacing: .2em;
+}
+.page-title h1 {
+margin: 0;
+color: #16324f;
+font-size: 42px;
+font-weight: 700;
+letter-spacing: .05em;
+}
+.page-title-line {
+width: 45px;
+height: 3px;
+margin: 20px auto 0;
+border-radius: 3px;
+background: #0070c9;
 }
 
-.menu-toggle { display: none; background: #0055b3; color: white; text-align: center; padding: 15px; cursor: pointer; font-size: 24px; border-bottom: 1px solid #004494;
+.introduction {
+width: 90%;
+max-width: 850px;
+margin: 15px auto 55px;
+text-align: center;
+}
+.introduction .small {
+margin-bottom: 10px;
+color: #0070c9;
+font-size: 12px;
+font-weight: 700;
+letter-spacing: .18em;
+}
+.introduction h2 {
+margin: 0;
+color: #16324f;
+font-size: 30px;
+font-weight: 700;
+}
+.introduction p {
+max-width: 700px;
+margin: 18px auto 0;
+color: #64748b;
+font-size: 15px;
+line-height: 2;
+}
 
+.container {
+width: 90%;
+max-width: 1050px;
+margin: 0 auto 90px;
+}
+.publication-card {
+position: relative;
+background: white;
+padding: 40px 45px;
+margin-bottom: 28px;
+border: 1px solid #e7edf4;
+border-radius: 16px;
+box-shadow: 0 8px 30px rgba(15,23,42,.055);
+overflow: hidden;
+transition: transform .25s ease, box-shadow .25s ease;
+}
+.publication-card:hover {
+transform: translateY(-3px);
+box-shadow: 0 14px 38px rgba(15,23,42,.09);
+}
+.publication-card::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 6px;
+height: 100%;
+background: linear-gradient(180deg, #0066c7, #00a9e8);
+}
+.card-label {
+margin-bottom: 10px;
+color: #0070c9;
+font-size: 11px;
+font-weight: 700;
+letter-spacing: .16em;
+}
+.publication-card h2 {
+margin: 0 0 25px;
+padding-bottom: 17px;
+color: #16324f;
+font-size: 24px;
+font-weight: 700;
+border-bottom: 1px solid #e8edf3;
+}
+
+.publication-item {
+display: grid;
+grid-template-columns: 90px 1fr;
+gap: 20px;
+align-items: start;
+padding: 18px 0;
+border-bottom: 1px solid #edf1f5;
+}
+.publication-item:last-child {
+border-bottom: none;
+padding-bottom: 0;
+}
+.publication-item:first-of-type {
+padding-top: 0;
+}
+.year {
+display: inline-block;
+color: #0070c9;
+font-size: 18px;
+font-weight: 700;
+letter-spacing: .03em;
+}
+.publication-content {
+color: #475569;
+font-size: 15px;
+line-height: 1.8;
+}
+.publication-content strong {
+display: block;
+color: #263f59;
+font-size: 16px;
+font-weight: 600;
+}
+.publication-content .sub {
+display: block;
+margin-top: 3px;
+color: #94a3b8;
+font-size: 13px;
+}
+
+.award-item {
+display: grid;
+grid-template-columns: 115px 1fr;
+gap: 20px;
+align-items: center;
+padding: 19px 0;
+border-bottom: 1px solid #edf1f5;
+}
+.award-item:last-child {
+border-bottom: none;
+padding-bottom: 0;
+}
+.award-item:first-of-type {
+padding-top: 0;
+}
+.award-date {
+color: #0070c9;
+font-size: 14px;
+font-weight: 700;
+}
+.award-content {
+color: #334155;
+font-size: 15px;
+font-weight: 600;
+line-height: 1.7;
+}
+.award-badge {
+display: inline-block;
+margin-right: 8px;
+padding: 4px 9px;
+background: #eaf4ff;
+border: 1px solid #cfe7fb;
+border-radius: 20px;
+color: #0066c7;
+font-size: 10px;
+font-weight: 700;
+vertical-align: middle;
+}
+
+footer {
+background: linear-gradient(135deg, #003d82 0%, #0066c7 100%);
+color: rgba(255,255,255,.78);
+text-align: center;
+padding: 35px 20px;
+font-size: 13px;
+letter-spacing: .05em;
+}
+
+.menu-toggle {
+display: none;
+background: white;
+color: #0055b3;
+text-align: center;
+padding: 14px;
+cursor: pointer;
+font-size: 23px;
 position: sticky;
 top: 0;
-z-index: 1001; }
+z-index: 1001;
+border-bottom: 1px solid #e2e8f0;
+}
 
-@media(max-width:768px){
-.menu-toggle { display: block; }
-nav { display: none; flex-direction: column;
-position: sticky; 
-top: 60px;}
-nav.open { display: flex; }
-nav a { text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
-header{ padding:40px 15px; }
-header h1{ font-size:30px; }
-.hero{ height: 250px !important; }
-.container{ width:95%; }
-.catchcopy1 {
-font-size: 35px;
+@media(max-width:768px) {
+header {
+padding: 28px 22px;
+}
+header h1 {
+font-size: 28px;
+}
+header p {
+font-size: 12px;
+}
+.menu-toggle {
+display: block;
+}
+nav {
+display: none;
+flex-direction: column;
+position: sticky;
+top: 53px;
+}
+nav.open {
+display: flex;
+}
+nav a {
+justify-content: center;
+padding: 15px;
+border-bottom: 1px solid #edf2f7;
+}
+nav a.active::after {
+display: none;
+}
+.page-title {
+padding: 50px 20px 45px;
+}
+.page-title h1 {
+font-size: 32px;
+}
+.introduction {
+margin-bottom: 40px;
+}
+.introduction h2 {
+font-size: 24px;
+}
+.container {
+width: 92%;
+margin-bottom: 55px;
+}
+.publication-card {
+padding: 30px 25px;
+}
+.publication-card h2 {
+font-size: 21px;
+}
+.publication-item {
+grid-template-columns: 1fr;
+gap: 5px;
+}
+.year {
+font-size: 16px;
+}
+.award-item {
+grid-template-columns: 1fr;
+gap: 6px;
 }
 }
 </style>
 <header>
+<div class="header-inner">
 <h1>
 <a href="index.html">鷹取研究室</a>
 </h1>
 <p>
-Wireless Systems Laboratory
+WIRELESS SYSTEMS LABORATORY
 </p>
+</div>
 </header>
 <div class="menu-toggle" onclick="toggleMenu()">
 ☰
@@ -252,67 +467,119 @@ Wireless Systems Laboratory
 </nav>
 <script>
 function toggleMenu() {
-  document.getElementById("nav-menu").classList.toggle("open");
+document.getElementById("nav-menu").classList.toggle("open");
 }
 
-// メニュー選択時に閉じる処理
-document.querySelectorAll("#nav-menu a").forEach(el => {
-  el.addEventListener("click", () => {
-    document.getElementById("nav-menu").classList.remove("open");
-  });
+document.querySelectorAll("#nav-menu a").forEach(function(el) {
+el.addEventListener("click", function() {
+document.getElementById("nav-menu").classList.remove("open");
+});
 });
 </script>
-<h1 class="catchcopy1">
+<div class="page-title">
+<div class="english">
+PUBLICATIONS
+</div>
+<h1>
 研究業績
 </h1>
+<div class="page-title-line">
+
+</div>
+</div>
+<div class="introduction">
+<div class="small">
+RESEARCH ACHIEVEMENTS
+</div>
+<h2>
+研究成果・学会発表
+</h2>
+<p>
+鷹取研究室における国際会議、国内学会、外部発表、受賞などの研究成果を紹介します。
+</p>
+</div>
 <div class="container">
-<div class="card">
+<div class="publication-card">
+<div class="card-label">
+INTERNATIONAL CONFERENCE
+</div>
 <h2>
 国際会議発表
 </h2>
-<ul>
-<li>
-<p><b>2026</b><br> VTC2026-Fall Boston - IEEE<br></p>
-</li>
-<br>
-</ul>
+<div class="publication-item">
+<div class="year">
+2026
 </div>
-<div class="card">
+<div class="publication-content">
+<p><strong>VTC2026-Fall Boston - IEEE</strong> <span class="sub">International Conference</span></p>
+</div>
+</div>
+</div>
+<div class="publication-card">
+<div class="card-label">
+DOMESTIC CONFERENCE
+</div>
 <h2>
 国内学会発表
 </h2>
-<ul>
-<li>
-<b>2026</b><br> 電子情報通信学会 総合大会
-</li>
-<br>
-<li>
-<b>2025</b><br> 電子情報通信学会 ソサイエティ大会
-</li>
-</ul>
+<div class="publication-item">
+<div class="year">
+2026
 </div>
-<div class="card">
+<div class="publication-content">
+<p><strong>電子情報通信学会 総合大会</strong></p>
+</div>
+</div>
+<div class="publication-item">
+<div class="year">
+2025
+</div>
+<div class="publication-content">
+<p><strong>電子情報通信学会 ソサイエティ大会</strong></p>
+</div>
+</div>
+</div>
+<div class="publication-card">
+<div class="card-label">
+EXTERNAL PRESENTATION
+</div>
 <h2>
 外部発表
 </h2>
-<ul>
-<li>
-<b>2026</b><br> Beyond 5G White Paper 6G Radio Technology Project
-“Sensing Technologies”
-</li>
-<br>
-</ul>
+<div class="publication-item">
+<div class="year">
+2026
 </div>
-<div class="card">
+<div class="publication-content">
+<p><strong>Beyond 5G White Paper</strong> <span class="sub">6G Radio
+Technology Project “Sensing Technologies”</span></p>
+</div>
+</div>
+</div>
+<div class="publication-card">
+<div class="card-label">
+AWARDS
+</div>
 <h2>
 受賞
 </h2>
-<ul>
-<li>
-2026/09/07 若手研究者奨励賞受賞(VTC2026-Fall Boston - IEEE)
-<li>
-2026/03/19 2025年度優秀論文賞受賞
-</li>
+<div class="award-item">
+<div class="award-date">
+2026 / 09 / 07
+</div>
+<div class="award-content">
+<p><span class="award-badge">AWARD</span>
+若手研究者奨励賞受賞（VTC2026-Fall Boston - IEEE）</p>
+</div>
+</div>
+<div class="award-item">
+<div class="award-date">
+2026 / 03 / 19
+</div>
+<div class="award-content">
+<p><span class="award-badge">AWARD</span> 2025年度優秀論文賞受賞</p>
+</div>
+</div>
 </div>
 </div>
 <footer>

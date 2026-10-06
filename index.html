@@ -12,7 +12,7 @@
 
 
 
-<title>Home | 南山大学 鷹取研究室</title>
+<title>index.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -87,90 +87,112 @@ if (window.hljs) {
 
 
 <style>
-html,body{
-margin:0;
-padding:0;
-width:100%;
-background:#E3F2FD;
-font-family:Arial,sans-serif;
-}
-
-.main-container{
-max-width:100% !important;
-width:100% !important;
-margin:0 !important;
-padding:0 !important;
-}
-
-header{
-width: 100%;
-background: #0055b3;
-color: #ffffff;
-text-align: center;
-padding: 60px 20px;
+* {
 box-sizing: border-box;
-border-bottom: 3px solid #00d4ff;
+}
+html {
+scroll-behavior: smooth;
+}
+html, body {
+margin: 0;
+padding: 0;
+width: 100%;
+background: #f5f8fc;
+font-family: Arial, "Noto Sans JP", sans-serif;
+color: #1e293b;
+}
+.main-container {
+max-width: 100% !important;
+width: 100% !important;
+margin: 0 !important;
+padding: 0 !important;
+}
+
+header {
+width: 100%;
+background: linear-gradient(135deg, #003d82 0%, #0066c7 100%);
+color: white;
+padding: 38px 6%;
+}
+.header-inner {
+max-width: 1200px;
+margin: 0 auto;
 }
 header h1 {
 margin: 0;
-font-size: 42px;
+font-size: 38px;
 font-weight: 700;
-letter-spacing: 2px;
+letter-spacing: 0.08em;
+}
+header h1 a {
+color: white;
+text-decoration: none;
 }
 header p {
-margin: 12px 0 0 0;
-font-size: 18px;
-color: #e2e8f0;
-font-weight: 300;
-letter-spacing: 1px;
+margin: 8px 0 0;
+font-size: 15px;
+letter-spacing: 0.16em;
+color: rgba(255,255,255,.8);
 }
 
 nav {
 width: 100%;
-background: #0055b3;
+min-height: 60px;
+background: rgba(255,255,255,.97);
 display: flex;
 justify-content: center;
-flex-wrap: wrap;
+align-items: stretch;
 position: sticky;
 top: 0;
 z-index: 1000;
-box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+border-bottom: 1px solid #e2e8f0;
+box-shadow: 0 3px 15px rgba(15,23,42,.05);
 }
 nav a {
-color: #e2e8f0;
+display: flex;
+align-items: center;
+color: #475569;
 text-decoration: none;
-padding: 18px 28px;
-font-weight: 500;
-font-size: 15px;
-transition: all 0.3s ease;
+padding: 0 25px;
+font-size: 14px;
+font-weight: 600;
+transition: .25s;
 position: relative;
 }
 nav a:hover {
-color: #ffffff;
-background: rgba(255, 255, 255, 0.1);
+color: #0066c7;
+background: #f8fafc;
 }
 nav a.active {
-color: #00d4ff;
-font-weight: 700;
+color: #0055b3;
 }
 nav a.active::after {
-content: '';
+content: "";
 position: absolute;
+left: 25%;
+right: 25%;
 bottom: 0;
-left: 0;
-width: 100%;
 height: 3px;
-background: #00d4ff;
+border-radius: 3px 3px 0 0;
+background: #0077dd;
 }
 
-.hero{
-width: 100%;
-max-width: 1100px;
-margin: 30px auto;
+.hero-section {
+padding: 42px 0 25px;
+background:
+radial-gradient(circle at 80% 10%, #dbeeff 0, transparent 32%),
+#f5f8fc;
+}
+.hero {
+width: 92%;
+max-width: 1180px;
+height: 590px;
+margin: 0 auto;
 position: relative;
-height: 600px;
 overflow: hidden;
-background: none;
+border-radius: 22px;
+background: #dbe4ee;
+box-shadow: 0 18px 50px rgba(15,23,42,.14);
 }
 #slider-track {
 position: relative;
@@ -179,137 +201,325 @@ height: 100%;
 }
 .slide {
 position: absolute;
-top: 50%;
-left: 15%;
-transform: translateY(-50%) scale(0.8);
-width: 70%;
-height: auto;
-aspect-ratio: 7 / 5;
+inset: 0;
+width: 100%;
+height: 100%;
 object-fit: cover;
-border-radius: 14px;
-transition: all 0.5s ease-in-out;
 opacity: 0;
-z-index: 0;
-box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+transform: scale(1.035);
+transition:
+opacity .8s ease,
+transform 5s ease;
 }
-
 .slide.active {
-left: 15%;
-transform: translateY(-50%) scale(1);
 opacity: 1;
+transform: scale(1);
 z-index: 2;
 }
 
-.slide.prev {
-left: -10%;
-transform: translateY(-50%) scale(0.85);
-opacity: 0.5;
-z-index: 1;
+.hero::after {
+content: "";
+position: absolute;
+inset: 0;
+z-index: 3;
+pointer-events: none;
+background:
+linear-gradient(
+180deg,
+transparent 55%,
+rgba(0,30,65,.35) 100%
+);
+}
+.hero-label {
+position: absolute;
+z-index: 5;
+left: 45px;
+bottom: 38px;
+color: white;
+}
+.hero-label .small {
+font-size: 14px;
+letter-spacing: .15em;
+margin-bottom: 8px;
+opacity: .9;
+}
+.hero-label .large {
+font-size: 30px;
+font-weight: 700;
+letter-spacing: .04em;
+}
+.arrow {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+width: 48px;
+height: 48px;
+border: 1px solid rgba(255,255,255,.5);
+border-radius: 50%;
+background: rgba(15,23,42,.30);
+backdrop-filter: blur(5px);
+color: white;
+font-size: 22px;
+cursor: pointer;
+z-index: 6;
+transition: .25s;
+}
+.arrow:hover {
+background: rgba(0,85,179,.85);
+transform: translateY(-50%) scale(1.06);
+}
+.arrow.left {
+left: 22px;
+}
+.arrow.right {
+right: 22px;
 }
 
-.slide.next {
-left: 40%;
-transform: translateY(-50%) scale(0.85);
-opacity: 0.5;
-z-index: 1;
+.slider-dots {
+position: absolute;
+z-index: 6;
+left: 50%;
+bottom: 17px;
+transform: translateX(-50%);
+display: flex;
+gap: 9px;
 }
-.arrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-width:52px;
-height:52px;
-border:none;
-border-radius:50%;
-background:rgba(0,0,0,.4);
-color:white;
-font-size:26px;
-cursor:pointer;
-transition:.2s;
-z-index: 10;
+.dot {
+width: 8px;
+height: 8px;
+border-radius: 50%;
+border: 0;
+background: rgba(255,255,255,.55);
+cursor: pointer;
+padding: 0;
+transition: .25s;
 }
-.arrow:hover{
-background:rgba(0,0,0,.7);
-}
-.arrow.left{
-left:15px;
-}
-.arrow.right{
-right:15px;
+.dot.active {
+width: 26px;
+border-radius: 10px;
+background: white;
 }
 
-.container{
-width:90%;
-max-width:1200px;
-margin:40px auto;
+.container {
+width: 90%;
+max-width: 1120px;
+margin: 65px auto 80px;
 }
-.card{
-background:#fff;
-padding:30px;
-margin-bottom:30px;
-border-radius:12px;
-box-shadow:0 4px 12px rgba(0,0,0,.08);
-border-top:4px solid #0066cc;
+.section-label {
+color: #0070c9;
+font-size: 12px;
+font-weight: 700;
+letter-spacing: .16em;
+text-transform: uppercase;
+margin-bottom: 6px;
 }
-.card h2{
-margin-top:0;
-color:#0066cc;
-border-bottom:1px solid #ddd;
-padding-bottom:10px;
+.card {
+background: white;
+padding: 38px 42px;
+margin-bottom: 28px;
+border-radius: 16px;
+border: 1px solid #e7edf4;
+box-shadow: 0 8px 30px rgba(15,23,42,.055);
+transition: transform .25s, box-shadow .25s;
+}
+.card:hover {
+transform: translateY(-2px);
+box-shadow: 0 12px 35px rgba(15,23,42,.085);
+}
+.card h2 {
+margin: 0 0 23px;
+color: #16324f;
+font-size: 25px;
+border: 0;
+padding: 0;
 }
 .card p,
-.card li{
-line-height:1.8;
+.card li {
+line-height: 1.9;
+color: #475569;
+}
+.new-badge {
+display: inline-block;
+margin-left: 10px;
+padding: 4px 10px;
+vertical-align: middle;
+background: #eaf4ff;
+color: #0066c7;
+border-radius: 20px;
+font-size: 12px;
+font-weight: 700;
 }
 
-footer{
-background:#0055b3;
-color:white;
-text-align:center;
-padding:25px;
+.research-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 13px;
 }
-header h1 a {
-text-decoration: none; 
-color: inherit;
-
+.research-item {
+padding: 18px 20px;
+background: #f8fbff;
+border: 1px solid #e1ecf7;
+border-radius: 10px;
+font-weight: 600;
+color: #29445f;
+transition: .25s;
+}
+.research-item:hover {
+background: #edf6ff;
+border-color: #b9dcfa;
 }
 
-.card a {
-color: #0066cc;
+.topic {
+display: grid;
+grid-template-columns: 120px 1fr;
+align-items: center;
+gap: 20px;
+padding: 19px 4px;
+border-bottom: 1px solid #e8edf3;
+}
+.topic:last-of-type {
+border-bottom: none;
+}
+.topic-date {
+color: #94a3b8;
+font-size: 14px;
+font-weight: 500;
+}
+.topic a {
+color: #334155;
+font-weight: 600;
 text-decoration: none;
-transition: color 0.3s ease;
+transition: .2s;
 }
-.card a:hover {
-color: #00d4ff; 
+.topic a:hover {
+color: #0070c9;
+}
+.topic-link {
+text-align: right;
+margin-top: 25px;
+}
+.topic-link a,
+.poster-link a {
+color: #0066c7;
+text-decoration: none;
+font-size: 14px;
+font-weight: 600;
+}
+.topic-link a:hover,
+.poster-link a:hover {
 text-decoration: underline;
 }
 
-.menu-toggle { display: none; background: #0055b3; color: white; text-align: center; padding: 15px; cursor: pointer; font-size: 24px; border-bottom: 1px solid #004494;
+footer {
+background: linear-gradient(135deg, #003d82 0%, #0066c7 100%);
+color: rgba(255,255,255,.78);
+text-align: center;
+padding: 35px 20px;
+font-size: 13px;
+letter-spacing: .05em;
+}
+.topic a,
+.topic-link a,
+.poster-link a {
+color: #0066c7;
+text-decoration: none;
+font-weight: 600;
+transition: .2s;
+}
+.topic a:hover,
+.topic-link a:hover,
+.poster-link a:hover {
+color: #00d4ff;
+text-decoration: underline;
+}
 
+.menu-toggle {
+display: none;
+background: white;
+color: #0055b3;
+text-align: center;
+padding: 14px;
+cursor: pointer;
+font-size: 23px;
 position: sticky;
 top: 0;
-z-index: 1001;}
-
-@media(max-width:768px){
-.menu-toggle { display: block; }
-nav { display: none; flex-direction: column;
-position: sticky; 
-top: 60px;}
-nav.open { display: flex; }
-nav a { text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
-header{ padding:40px 15px; }
-header h1{ font-size:30px; }
-.hero{ height: 250px !important; }
-.container{ width:95%; }
+z-index: 1001;
+border-bottom: 1px solid #e2e8f0;
+}
+@media(max-width:768px) {
+header {
+padding: 28px 22px;
+}
+header h1 {
+font-size: 28px;
+}
+header p {
+font-size: 12px;
+}
+.menu-toggle {
+display: block;
+}
+nav {
+display: none;
+flex-direction: column;
+position: sticky;
+top: 53px;
+}
+nav.open {
+display: flex;
+}
+nav a {
+justify-content: center;
+padding: 15px;
+border-bottom: 1px solid #edf2f7;
+}
+nav a.active::after {
+display: none;
+}
+.hero-section {
+padding-top: 20px;
+}
+.hero {
+width: 94%;
+height: 330px;
+border-radius: 14px;
+}
+.hero-label {
+left: 25px;
+bottom: 32px;
+}
+.hero-label .large {
+font-size: 21px;
+}
+.arrow {
+width: 40px;
+height: 40px;
+}
+.container {
+width: 92%;
+margin-top: 38px;
+}
+.card {
+padding: 27px 24px;
+}
+.research-grid {
+grid-template-columns: 1fr;
+}
+.topic {
+grid-template-columns: 1fr;
+gap: 5px;
+}
 }
 </style>
 <header>
+<div class="header-inner">
 <h1>
 <a href="index.html">鷹取研究室</a>
 </h1>
 <p>
-Wireless Systems Laboratory
+WIRELESS SYSTEMS LABORATORY
 </p>
+</div>
 </header>
 <div class="menu-toggle" onclick="toggleMenu()">
 ☰
@@ -326,16 +536,27 @@ function toggleMenu() {
   document.getElementById("nav-menu").classList.toggle("open");
 }
 
-// メニュー選択時に閉じる処理
-document.querySelectorAll("#nav-menu a").forEach(el => {
-  el.addEventListener("click", () => {
+document.querySelectorAll("#nav-menu a").forEach(function(el) {
+  el.addEventListener("click", function() {
     document.getElementById("nav-menu").classList.remove("open");
   });
 });
 </script>
+<!-- ==============================
+     HERO
+============================== -->
+<div class="hero-section">
 <div class="hero">
 <div id="slider-track">
 
+</div>
+<div class="hero-label">
+<div class="small">
+TAKATORI LABORATORY
+</div>
+<div class="large">
+Wireless Systems Laboratory
+</div>
 </div>
 <button class="arrow left" onclick="prevImage()">
 ❮
@@ -343,117 +564,148 @@ document.querySelectorAll("#nav-menu a").forEach(el => {
 <button class="arrow right" onclick="nextImage()">
 ❯
 </button>
+<div id="slider-dots" class="slider-dots">
+
+</div>
+</div>
 </div>
 <script>
 var images = [
-"IMG_6700.JPG",
-"IMG_7560.JPG",
-"IMG_7628.JPG",
-
-
+  "IMG_6700.JPG",
+  "IMG_7560.JPG",
+  "IMG_7628.JPG"
 ];
 
 var currentIndex = 0;
 var track = document.getElementById("slider-track");
+var dots = document.getElementById("slider-dots");
 
-images.forEach(function(src) {
-var img = document.createElement("img");
-img.src = src;
-img.className = "slide";
-track.appendChild(img);
+images.forEach(function(src, index) {
+
+  var img = document.createElement("img");
+  img.src = src;
+  img.className = "slide";
+  track.appendChild(img);
+
+  var dot = document.createElement("button");
+  dot.className = "dot";
+  dot.onclick = function() {
+    currentIndex = index;
+    updateSlider();
+  };
+
+  dots.appendChild(dot);
 });
 
-function updateSlider(){
-var slides = document.querySelectorAll(".slide");
 
-slides.forEach(function(slide, index) {
-slide.className = "slide";
+function updateSlider() {
 
-if (index === currentIndex) {
-slide.classList.add("active");
-} else if (index === (currentIndex - 1 + slides.length) % slides.length) {
-slide.classList.add("prev");
-} else if (index === (currentIndex + 1) % slides.length) {
-slide.classList.add("next");
+  var slides = document.querySelectorAll(".slide");
+  var allDots = document.querySelectorAll(".dot");
+
+  slides.forEach(function(slide, index) {
+    slide.classList.toggle("active", index === currentIndex);
+  });
+
+  allDots.forEach(function(dot, index) {
+    dot.classList.toggle("active", index === currentIndex);
+  });
 }
-});
-}
+
 
 function nextImage() {
-currentIndex = (currentIndex + 1) % images.length;
-updateSlider();
+  currentIndex = (currentIndex + 1) % images.length;
+  updateSlider();
 }
+
 
 function prevImage() {
-currentIndex = (currentIndex - 1 + images.length) % images.length;
-updateSlider();
+  currentIndex =
+    (currentIndex - 1 + images.length) % images.length;
+
+  updateSlider();
 }
 
+
 updateSlider();
+
 setInterval(nextImage, 10000);
 </script>
+<!-- ==============================
+     CONTENT
+============================== -->
 <div class="container">
+<!-- Laboratory -->
 <div class="card">
+<div class="section-label">
+ABOUT US
+</div>
 <h2>
-研究室紹介 <span style="background: #e3f2fd; color: #0055b3; padding: 5px 10px; border-radius: 5px; font-size: 14px; font-weight: bold; border: 1px solid #0055b3;">
-2025年4月 新設 </span>
+研究室紹介<span class="new-badge">2025年4月 新設</span>
 </h2>
 <p>
 本研究室では通信・レーダ融合技術（ISAC）、無線通信システム、信号処理に関する研究を行っています。
 </p>
 </div>
+<!-- Research -->
 <div class="card">
+<div class="section-label">
+RESEARCH
+</div>
 <h2>
 研究分野
 </h2>
-<ul>
-<li>
+<div class="research-grid">
+<div class="research-item">
 ISAC（Integrated Sensing and Communications）
-</li>
-<li>
-OFDM・DFTs-OFDM
-</li>
-<li>
-レーダ信号処理
-</li>
-<li>
-MIMO・ビームフォーミング
-</li>
-</ul>
 </div>
+<div class="research-item">
+OFDM・DFTs-OFDM
+</div>
+<div class="research-item">
+レーダ信号処理
+</div>
+<div class="research-item">
+MIMO・ビームフォーミング
+</div>
+</div>
+</div>
+<!-- Topics -->
 <div class="card">
+<div class="section-label">
+NEWS &amp; TOPICS
+</div>
 <h2>
 最新トピックス
 </h2>
-<div style="margin-bottom: 20px;">
-<div style="color: #64748b; font-size: 15px; font-weight: 500;">
-2026/09/07
+<div class="topic">
+<div class="topic-date">
+2026.09.07
 </div>
-<p><a href="topics.html#topic1" class="hover-link">
-若手研究者奨励賞受賞</a></p>
+<p><a href="topics.html#topic1"> 若手研究者奨励賞受賞 </a></p>
 </div>
-<!-- 1件目：#topic1 に飛ぶ -->
-<div style="margin-bottom: 20px;">
-<div style="color: #64748b; font-size: 15px; font-weight: 500;">
-2026/07/08
+<div class="topic">
+<div class="topic-date">
+2026.07.08
 </div>
-<p><a href="topics.html#topic2" class="hover-link">南山大学オープンキャンパスについて</a></p>
-<div style="text-align: right; border-top: 0px solid #e2e8f0; padding-top: 0px; font-size:15px;">
-<p><a href="https://st-nanzan-u.app.box.com/s/39ozu5cko8ljr9k2ec792qptf1nd1tko">≫
-研究紹介ポスターDL</a></p>
+<div>
+<a href="topics.html#topic2">南山大学オープンキャンパスについて</a>
+<div class="poster-link" style="margin-top:8px;">
+<p><a href="https://st-nanzan-u.app.box.com/s/39ozu5cko8ljr9k2ec792qptf1nd1tko">研究紹介ポスター
+DL → </a></p>
 </div>
 </div>
-<!-- 2件目：#topic2 に飛ぶ -->
-<div style="margin-bottom: 20px;">
-<div style="color: #64748b; font-size: 15px; font-weight: 500;">
-2026/06/24
 </div>
-<p><a href="topics.html#topic3" class="hover-link">「セントラルヘリコプターサービス株式会社」の工場見学</a></p>
+<div class="topic">
+<div class="topic-date">
+2026.06.24
 </div>
-<!-- 3件目：#topic3 に飛ぶ -->
-<div style="text-align: right; border-top: 1px solid #e2e8f0; padding-top: 10px;">
-<p><a href="topics.html" style="font-size: 15px;"> ≫
-過去のトピックス一覧を見る</a></p>
+<p><a href="topics.html#topic3">
+「セントラルヘリコプターサービス株式会社」の工場見学</a></p>
+</div>
+<div class="topic-link">
+<p><a href="topics.html"> 過去のトピックス一覧を見る → </a></p>
+</div>
 </div>
 </div>
 </div>
