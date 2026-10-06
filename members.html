@@ -12,7 +12,7 @@
 
 
 
-<title>メンバー | 南山大学 鷹取研究室</title>
+<title>members.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -106,102 +106,6 @@ max-width: 100% !important;
 width: 100% !important;
 margin: 0 !important;
 padding: 0 !important;
-}
-
-.member-row { display: flex;
-flex-wrap: wrap; gap: 20px;
-}
-.member-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; text-align: left; width: calc(50% - 20px); box-sizing: border-box; }
-.member-card h3 { margin: 10px 0 5px 0; font-size: 15px; color: #1e293b;
-}
-.member-card img { border-radius: 4px; margin-bottom: 5px; width: 100px; height: 100px; object-fit: cover; 
-float: left; 
-margin-right: 15px; 
-}
-.member-card p { margin: 4px 0; font-size: 12px; color: #64748b; text-align: left;
-}
-
-footer { background: linear-gradient(135deg, #003d82 0%, #0066c7 100%);
-color: #ffffff; text-align: center; padding: 25px; }
-
-.prof-card-container {
-background: #ffffff;
-width: 100%;
-max-width: 450px;
-margin: 30px auto 30px; 
-border-radius: 10px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-position: relative;
-padding-top: 50px;
-border: 1px solid #e2e8f0;
-
-}
-
-.prof-card-container::before {
-content: '';
-position: absolute; top: 0; left: 0; width: 100%; height: 10px; 
-background: linear-gradient(135deg, #0055b3, #00d4ff);
-
-border-top-left-radius: 24px;
-border-top-right-radius: 24px;
-z-index: 0;
-}
-
-.prof-img-wrap {
-width: 100px; height: 100px;
-margin: -30px auto 15px; 
-border-radius: 50%; 
-border: 5px solid #ffffff;
-background: #ffffff;
-box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-position: relative;
-z-index: 1;
-overflow: hidden; 
-}
-
-.prof-img-wrap img {
-width: 100%;
-height: 100%;
-object-fit: cover; 
-display: block; 
-}
-.prof-content { padding: 0 30px 30px; text-align: center; }
-.prof-name { font-size: 24px; color: #1e293b; margin: 0 0 5px; }
-.prof-title { font-size: 14px; color: #64748b; margin-bottom: 20px; display: block; }
-.prof-info { text-align: left; background: #E3F2FD; padding: 15px; border-radius: 12px; font-size: 14px; }
-.prof-info p { margin: 5px 0; }
-header h1 a {
-text-decoration: none; 
-color: inherit; 
-}
-
-.member-row {
-display: flex;
-flex-wrap: wrap;
-justify-content: center; 
-gap: 15px; 
-}
-
-.roman {
-display: block;
-font-size: 11px; 
-color: #94a3b8; 
-font-weight: normal;
-margin-top: 2px;
-}
-
-.menu-toggle { display: none; background: #0055b3; color: white; text-align: center; padding: 15px; cursor: pointer; font-size: 24px; border-bottom: 1px solid #004494;
-
-position: sticky;
-top: 0;
-z-index: 1001; }
-
-.catchcopy1{
-text-align: center;
-color: #0066cc;
-font-size: 50px;
-font-weight: 700;
-margin-bottom: 40px;
 }
 
 header {
@@ -302,188 +206,153 @@ border-radius: 3px;
 background: #0070c9;
 }
 
-.introduction {
-width: 90%;
-max-width: 1000px;
-margin: 15px auto 60px;
-text-align: center;
-}
-.introduction .small {
-margin-bottom: 10px;
-color: #0070c9;
-font-size: 12px;
-font-weight: 700;
-letter-spacing: .18em;
-}
-.introduction h2 {
-margin: 0;
-color: #16324f;
-font-size: 32px;
-font-weight: 700;
-}
-.introduction p {
-max-width: 750px;
-margin: 20px auto 0;
-color: #64748b;
-font-size: 16px;
-line-height: 2;
-}
-
-.keyword-area {
-width: 90%;
-max-width: 1050px;
-margin: 0 auto 65px;
-}
-.keyword-title {
-margin-bottom: 17px;
-color: #64748b;
-text-align: center;
-font-size: 12px;
-font-weight: 700;
-letter-spacing: .16em;
-}
-.keywords {
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
-gap: 10px;
-}
-.keyword {
-padding: 9px 17px;
-background: #eaf4ff;
-border: 1px solid #cfe7fb;
-border-radius: 30px;
-color: #0066c7;
-font-size: 13px;
-font-weight: 600;
-}
-
-.card-number {
-margin-bottom: 12px;
-color: #0070c9;
-font-size: 12px;
-font-weight: 700;
-letter-spacing: .15em;
-}
 .container {
 width: 90%;
-max-width: 1120px;
-margin: 65px auto 80px;
+max-width: 1050px;
+margin: 0 auto 90px;
 }
-.section-label {
-color: #0070c9;
-font-size: 12px;
-font-weight: 700;
-letter-spacing: .16em;
-text-transform: uppercase;
-margin-bottom: 6px;
-}
+
 .card {
+position: relative;
 background: white;
-padding: 38px 42px;
+padding: 40px 45px;
 margin-bottom: 28px;
-border-radius: 16px;
 border: 1px solid #e7edf4;
+border-radius: 16px;
 box-shadow: 0 8px 30px rgba(15,23,42,.055);
-transition: transform .25s, box-shadow .25s;
+overflow: hidden;
+transition: transform .25s ease, box-shadow .25s ease;
 }
 .card:hover {
-transform: translateY(-2px);
-box-shadow: 0 12px 35px rgba(15,23,42,.085);
+transform: translateY(-3px);
+box-shadow: 0 14px 38px rgba(15,23,42,.09);
+}
+.card::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 6px;
+height: 100%;
+background: linear-gradient(180deg, #0066c7, #00a9e8);
 }
 .card h2 {
-margin: 0 0 23px;
+margin: 0 0 25px;
+padding-bottom: 17px;
 color: #16324f;
-font-size: 25px;
-border: 0;
-padding: 0;
+font-size: 24px;
+font-weight: 700;
+border-bottom: 1px solid #e8edf3;
 }
-.card p,
-.card li {
-line-height: 1.9;
+.card h3 {
+color: #263f59;
+}
+
+.member-row {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 18px;
+}
+
+.member-card {
+position: relative;
+min-height: 145px;
+padding: 20px;
+background: #f8fbff;
+border: 1px solid #e1ecf7;
+border-radius: 12px;
+transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+overflow: hidden;
+}
+.member-card:hover {
+transform: translateY(-2px);
+background: #ffffff;
+border-color: #b9dcfa;
+box-shadow: 0 8px 22px rgba(15,23,42,.07);
+}
+.member-card::after {
+content: "";
+display: block;
+clear: both;
+}
+.member-card img {
+width: 100px;
+height: 100px;
+object-fit: cover;
+float: left;
+margin-right: 18px;
+border-radius: 10px;
+background: #e2e8f0;
+}
+.member-card h3 {
+margin: 4px 0 9px;
+color: #263f59;
+font-size: 16px;
+font-weight: 700;
+line-height: 1.45;
+}
+.roman {
+display: block;
+margin-top: 3px;
+color: #94a3b8;
+font-size: 11px;
+font-weight: 500;
+letter-spacing: .03em;
+}
+.member-card p {
+margin: 4px 0;
+color: #64748b;
+font-size: 12px;
+line-height: 1.6;
+}
+
+.professor-link {
+grid-column: 1 / -1;
+margin-top: 2px;
+text-align: right;
+}
+.professor-link a {
+color: #0066c7;
+text-decoration: none;
+font-size: 14px;
+font-weight: 600;
+transition: color .25s ease;
+}
+.professor-link a:hover {
+color: #00aeea;
+text-decoration: underline;
+}
+
+.career-title {
+margin: 25px 0 10px;
+color: #263f59;
+font-size: 17px;
+font-weight: 700;
+}
+.career-title:first-of-type {
+margin-top: 0;
+}
+.career-list {
+margin: 0;
+padding-left: 22px;
+}
+.career-list li {
+margin-bottom: 7px;
 color: #475569;
+font-size: 15px;
+line-height: 1.7;
 }
 .new-badge {
 display: inline-block;
-margin-left: 10px;
+margin-left: 8px;
 padding: 4px 10px;
-vertical-align: middle;
 background: #eaf4ff;
-color: #0066c7;
+border: 1px solid #cfe7fb;
 border-radius: 20px;
-font-size: 12px;
-font-weight: 700;
-}
-
-.research-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 13px;
-}
-.research-item {
-padding: 18px 20px;
-background: #f8fbff;
-border: 1px solid #e1ecf7;
-border-radius: 10px;
-font-weight: 600;
-color: #29445f;
-transition: .25s;
-}
-.research-item:hover {
-background: #edf6ff;
-border-color: #b9dcfa;
-}
-
-.card a { color: #0066cc; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
-.card a:hover { color: #00d4ff; text-decoration: underline; }
-.link-list a { display: block; margin-bottom: 10px;
-}
-
-.container { width:90%; max-width:1200px; margin:40px auto; }
-.card { background:white; padding:30px; margin-bottom:30px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.06); border-top: 4px solid #0066cc;
-}
-.card h2 { margin-top:0; color: #0066cc; font-size: 22px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 20px;
-}
-
-.topic {
-display: grid;
-grid-template-columns: 120px 1fr;
-align-items: center;
-gap: 20px;
-padding: 19px 4px;
-border-bottom: 1px solid #e8edf3;
-}
-.topic:last-of-type {
-border-bottom: none;
-}
-.topic-date {
-color: #94a3b8;
-font-size: 14px;
-font-weight: 500;
-}
-.topic a {
-color: #334155;
-font-weight: 600;
-text-decoration: none;
-transition: .2s;
-}
-.topic a:hover {
-color: #0070c9;
-}
-.topic-link {
-text-align: right;
-margin-top: 25px;
-}
-.topic-link a,
-.poster-link a {
 color: #0066c7;
-text-decoration: none;
-font-size: 14px;
-font-weight: 600;
-}
-.topic-link a:hover,
-.poster-link a:hover {
-text-decoration: underline;
+font-size: 10px;
+font-weight: 700;
+vertical-align: middle;
 }
 
 footer {
@@ -508,6 +377,7 @@ top: 0;
 z-index: 1001;
 border-bottom: 1px solid #e2e8f0;
 }
+
 @media(max-width:768px) {
 header {
 padding: 28px 22px;
@@ -517,6 +387,7 @@ font-size: 28px;
 }
 header p {
 font-size: 12px;
+letter-spacing: .12em;
 }
 .menu-toggle {
 display: block;
@@ -538,50 +409,97 @@ border-bottom: 1px solid #edf2f7;
 nav a.active::after {
 display: none;
 }
-.hero-section {
-padding-top: 20px;
+.page-title {
+padding: 50px 20px 45px;
 }
-.hero {
-width: 94%;
-height: 330px;
-border-radius: 14px;
-}
-.hero-label {
-left: 25px;
-bottom: 32px;
-}
-.hero-label .large {
-font-size: 21px;
-}
-.arrow {
-width: 40px;
-height: 40px;
-}
-.container {
-width: 92%;
-margin-top: 38px;
-}
-.card {
-padding: 27px 24px;
-}
-.research-grid {
-grid-template-columns: 1fr;
-}
-.topic {
-grid-template-columns: 1fr;
-gap: 5px;
-}
-.member-card h3 { font-size: 15px; }
-.member-card img { width: 80px; height: 80px; }
-.container{ width:95%; }
-
-.member-card {
-width: calc(100% - 12px) !important; }
-.catchcopy1 {
-font-size: 35px;
+.page-title .english {
+font-size: 11px;
 }
 .page-title h1 {
 font-size: 32px;
+}
+.page-title-line {
+margin-top: 16px;
+}
+.container {
+width: 92%;
+margin-bottom: 55px;
+}
+.card {
+padding: 30px 25px 30px 28px;
+margin-bottom: 22px;
+border-radius: 14px;
+}
+.card::before {
+width: 5px;
+}
+.card h2 {
+font-size: 21px;
+line-height: 1.5;
+margin-bottom: 20px;
+padding-bottom: 14px;
+}
+.member-row {
+grid-template-columns: 1fr;
+gap: 13px;
+}
+.member-card {
+width: 100%;
+min-height: 125px;
+padding: 16px;
+}
+.member-card img {
+width: 82px;
+height: 82px;
+margin-right: 14px;
+}
+.member-card h3 {
+margin-top: 1px;
+font-size: 15px;
+}
+.member-card p {
+font-size: 11px;
+line-height: 1.55;
+}
+.roman {
+font-size: 10px;
+}
+.professor-link {
+text-align: left;
+margin-top: 5px;
+}
+.new-badge {
+display: inline-block;
+margin-left: 4px;
+font-size: 9px;
+}
+.career-title {
+font-size: 16px;
+}
+.career-list li {
+font-size: 14px;
+}
+footer {
+padding: 30px 15px;
+font-size: 12px;
+}
+}
+
+@media(max-width:420px) {
+.member-card {
+min-height: 118px;
+padding: 14px;
+}
+.member-card img {
+width: 75px;
+height: 75px;
+margin-right: 12px;
+}
+.member-card h3 {
+font-size: 14px;
+}
+.member-card p {
+font-size: 10.5px;
 }
 }
 </style>
@@ -607,14 +525,13 @@ WIRELESS SYSTEMS LABORATORY
 </nav>
 <script>
 function toggleMenu() {
-  document.getElementById("nav-menu").classList.toggle("open");
+document.getElementById("nav-menu").classList.toggle("open");
 }
 
-// メニュー選択時に閉じる処理
-document.querySelectorAll("#nav-menu a").forEach(el => {
-  el.addEventListener("click", () => {
-    document.getElementById("nav-menu").classList.remove("open");
-  });
+document.querySelectorAll("#nav-menu a").forEach(function(el) {
+el.addEventListener("click", function() {
+document.getElementById("nav-menu").classList.remove("open");
+});
 });
 </script>
 <div class="page-title">
@@ -629,156 +546,139 @@ MEMBERS
 </div>
 </div>
 <div class="container">
-<!-- 教授紹介カード
-<div class="prof-card-container">
-<div class="prof-img-wrap">
-<img src="無名.png" alt="鷹取 泰司">
-</div>
-<div class="prof-content">
-<h2 class="prof-name">鷹取 泰司</h2>
-<span class="prof-title">教授 / 工学博士</span>
-<div class="prof-info">
-<p><b>趣味:</b> Wireless Communications</p>
-<p><b>一言:</b> Be Creative!</p>
-</div>
-</div>
-</div> -->
-<!-- 以降、修士1年、4年...と続く -->
 <div class="card">
 <h2>
-教授/工学博士
+教授 / 工学博士
 </h2>
 <div class="member-row">
 <div class="member-card">
-<img src="鷹取泰司.jpg">
+<img src="鷹取泰司.jpg" alt="鷹取 泰司">
 <h3>
-鷹取　泰司<br> <span class="roman">Yasushi Takatori</span>
+鷹取　泰司<span class="roman">Yasushi Takatori</span>
 </h3>
 <p>
-<b>趣味:</b>　Wireless Communications
+<b>趣味:</b> Wireless Communications
 </p>
 <p>
-<b>一言:</b>　Be Creative!
+<b>一言:</b> Be Creative!
 </p>
 </div>
-<div class="hover-link">
+<div class="professor-link">
 <p><a href="https://www.nanzan-u.ac.jp/nanzan_faculty/fot/tc/029626.html" target="_blank">≫
 詳しくはこちら</a></p>
 </div>
 </div>
 </div>
-<!-- 修士1年 -->
 <div class="card">
 <h2>
 修士1年
 </h2>
 <div class="member-row">
 <div class="member-card">
-<img src="otake.jpg">
+<img src="otake.jpg" alt="大竹 亜依">
 <h3>
-大竹　亜依<br> <span class="roman">Ai Otake</span>
+大竹　亜依<span class="roman">Ai Otake</span>
 </h3>
 <p>
-<b>趣味:</b>　ドラム
+<b>趣味:</b> ドラム
 </p>
 <p>
-<b>一言:</b>　サボテン育成中！
+<b>一言:</b> サボテン育成中！
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="松波 翔也">
 <h3>
 松波　翔也<span class="roman">Shoya Matsunami</span>
 </h3>
 <p>
-<b>趣味:</b>　写真
+<b>趣味:</b> 写真
 </p>
 <p>
-<b>一言:</b>　旅行行きたい
+<b>一言:</b> 旅行行きたい
 </p>
 </div>
 </div>
 </div>
-<!-- 大学4年 -->
 <div class="card">
 <h2>
 大学4年
 </h2>
 <div class="member-row">
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="伊藤 凌星">
 <h3>
 伊藤　凌星<span class="roman">Ryosei Ito</span>
 </h3>
 <p>
-<b>趣味:</b>　ダーツ
+<b>趣味:</b> ダーツ
 </p>
 <p>
-<b>一言:</b>　投げ友募集中
+<b>一言:</b> 投げ友募集中
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="奥津 佳">
 <h3>
 奥津　佳<span class="roman">Kei Okutsu</span>
 </h3>
 <p>
-<b>趣味:</b>　料理
+<b>趣味:</b> 料理
 </p>
 <p>
-<b>一言:</b>　頑張ります
+<b>一言:</b> 頑張ります
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="加藤 匠真">
 <h3>
 加藤　匠真<span class="roman">Takuma Kato</span>
 </h3>
 <p>
-<b>趣味:</b>　3Dプリント
+<b>趣味:</b> 3Dプリント
 </p>
 <p>
-<b>一言:</b>　鋭意製作中
+<b>一言:</b> 鋭意製作中
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="川口 遥斗">
 <h3>
 川口　遥斗<span class="roman">Haruto Kawaguchi</span>
 </h3>
 <p>
-<b>趣味:</b>　野球観戦、ゲーム
+<b>趣味:</b> 野球観戦、ゲーム
 </p>
 <p>
 <b>一言:</b> ○○
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="小林 大輝">
 <h3>
 小林　大輝<span class="roman">Daiki Kobayashi</span>
 </h3>
 <p>
-<b>趣味:</b>　VR
+<b>趣味:</b> VR
 </p>
 <p>
-<b>一言:</b>　睡眠がいらない身体になりたい
+<b>一言:</b> 睡眠がいらない身体になりたい
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="早野 友翔">
 <h3>
 早野　友翔<span class="roman">Yuto Hayano</span>
 </h3>
 <p>
-<b>趣味:</b>　サウナ
+<b>趣味:</b> サウナ
 </p>
 <p>
-<b>一言:</b>　ととのおう
+<b>一言:</b> ととのおう
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="野々村 貫瑛">
 <h3>
 野々村　貫瑛<span class="roman"></span>
 </h3>
@@ -790,7 +690,7 @@ MEMBERS
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="村瀬 匠胡">
 <h3>
 村瀬　匠胡<span class="roman"></span>
 </h3>
@@ -802,77 +702,76 @@ MEMBERS
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="森前 華帆">
 <h3>
 森前　華帆<span class="roman">Kaho Morimae</span>
 </h3>
 <p>
-<b>趣味:</b>　カラオケ
+<b>趣味:</b> カラオケ
 </p>
 <p>
-<b>一言:</b>　十八番は魂のルフラン
+<b>一言:</b> 十八番は魂のルフラン
 </p>
 </div>
 </div>
 </div>
-<!-- 大学3年 -->
 <div class="card">
 <h2>
 大学3年
 </h2>
 <div class="member-row">
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="石部 善">
 <h3>
 石部　善<span class="roman">Zen Ishibe</span>
 </h3>
 <p>
-<b>趣味:</b>　散歩
+<b>趣味:</b> 散歩
 </p>
 <p>
-<b>一言:</b>　ポジティブに生きる
+<b>一言:</b> ポジティブに生きる
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="岡安 大雅">
 <h3>
 岡安　大雅<span class="roman">Taiga Okayasu</span>
 </h3>
 <p>
-<b>趣味:</b>　テニス,カフェ巡り
+<b>趣味:</b> テニス、カフェ巡り
 </p>
 <p>
-<b>一言:</b>　休日は元気
+<b>一言:</b> 休日は元気
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="小木曽 弘典">
 <h3>
 小木曽　弘典<span class="roman">Hironori Kogiso</span>
 </h3>
 <p>
-<b>趣味:</b>　Youtube,ゲーム
+<b>趣味:</b> Youtube、ゲーム
 </p>
 <p>
 <b>一言:</b>
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="近藤 唯斗">
 <h3>
-近藤 唯斗<br> <span class="roman">Yuito Kondo</span>
+近藤　唯斗<span class="roman">Yuito Kondo</span>
 </h3>
 <p>
-<b>趣味:</b>　バイク,K-POP
+<b>趣味:</b> バイク、K-POP
 </p>
 <p>
-<b>一言:</b>　ライブ行きたい！！
+<b>一言:</b> ライブ行きたい！！
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="名前5">
 <h3>
-名前5 さん
+名前5 さん<span class="roman"></span>
 </h3>
 <p>
 <b>趣味:</b> ○○
@@ -882,21 +781,21 @@ MEMBERS
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="志賀 泰造">
 <h3>
-志賀　泰造<br> <span class="roman">Taizo Shiga</span>
+志賀　泰造<span class="roman">Taizo Shiga</span>
 </h3>
 <p>
-<b>趣味:</b>ゲーム
+<b>趣味:</b> ゲーム
 </p>
 <p>
 <b>一言:</b> 貯金中
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="名前7">
 <h3>
-名前7 さん
+名前7 さん<span class="roman"></span>
 </h3>
 <p>
 <b>趣味:</b> ○○
@@ -906,9 +805,9 @@ MEMBERS
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="名前8">
 <h3>
-名前8 さん
+名前8 さん<span class="roman"></span>
 </h3>
 <p>
 <b>趣味:</b> ○○
@@ -918,9 +817,9 @@ MEMBERS
 </p>
 </div>
 <div class="member-card">
-<img src="無名.png">
+<img src="無名.png" alt="名前9">
 <h3>
-名前9 さん
+名前9 さん<span class="roman"></span>
 </h3>
 <p>
 <b>趣味:</b> ○○
@@ -933,12 +832,12 @@ MEMBERS
 </div>
 <div class="card">
 <h2>
-卒業生の進路　<span class="new-badge">2025年4月以降 </span>
+卒業生の進路 <span class="new-badge">2025年4月以降</span>
 </h2>
-<h3>
+<h3 class="career-title">
 主な就職先
 </h3>
-<ul>
+<ul class="career-list">
 <li>
 オークマ株式会社
 </li>
@@ -946,10 +845,10 @@ MEMBERS
 株式会社豊田自動織機
 </li>
 </ul>
-<h3>
+<h3 class="career-title">
 大学院進学
 </h3>
-<ul>
+<ul class="career-list">
 <li>
 南山大学大学院
 </li>
