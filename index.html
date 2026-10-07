@@ -12,7 +12,7 @@
 
 
 
-<title>Home | 南山大学 鷹取研究室</title>
+<title>index.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -391,22 +391,41 @@ color: #94a3b8;
 font-size: 14px;
 font-weight: 500;
 }
-.topic a {
+.topic-content {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 9px 12px;
+}
+.topic-category {
+display: inline-block;
+padding: 4px 9px;
+background: #eaf4ff;
+border: 1px solid #cfe7fb;
+border-radius: 20px;
 color: #0066c7;
+font-size: 9px;
+font-weight: 700;
+letter-spacing: .08em;
+line-height: 1.4;
+}
+.topic a {
+color: #475569;
 font-weight: 600;
 text-decoration: none;
 transition: color .2s ease;
 }
 .topic a:hover {
-color: #00d4ff;
+color: #0066c7;
 }
 .poster-link {
-margin-top: 8px;
+width: 100%;
+margin-top: 1px;
 }
 .poster-link a {
 color: #0066c7;
 text-decoration: none;
-font-size: 14px;
+font-size: 13px;
 font-weight: 600;
 transition: color .2s ease;
 }
@@ -527,7 +546,25 @@ grid-template-columns: 1fr;
 }
 .topic {
 grid-template-columns: 1fr;
-gap: 5px;
+gap: 7px;
+padding: 17px 2px;
+}
+.topic-content {
+gap: 7px 10px;
+}
+.topic-category {
+font-size: 9px;
+padding: 3px 8px;
+}
+.topic a {
+font-size: 14px;
+line-height: 1.6;
+}
+.poster-link {
+margin-top: 2px;
+}
+.poster-link a {
+font-size: 12px;
 }
 }
 </style>
@@ -683,17 +720,35 @@ NEWS &amp; TOPICS
 <div class="topic-date">
 2026.09.07
 </div>
-<p><a href="topics.html#topic1">若手研究者奨励賞受賞</a></p>
+<div class="topic-content">
+<div class="topic-category">
+CONFERENCE
+</div>
+<div class="topic-category">
+AWARD
+</div>
+<a href="topics.html#topic1">VTC Young Researcher’s Encouragement
+Award受賞</a>
+<div class="poster-link">
+<p><a href="https://www.nanzan-u.ac.jp/Menu/news/2026/261007_jusho.html" target="_blank" rel="noopener noreferrer">受賞のことば</a></p>
+</div>
+</div>
 </div>
 <div class="topic">
 <div class="topic-date">
 2026.07.08
 </div>
-<div>
+<div class="topic-content">
+<div class="topic-category">
+INFORMATION
+</div>
+<div class="topic-category">
+EVENT
+</div>
 <a href="topics.html#topic2">南山大学オープンキャンパスについて</a>
 <div class="poster-link">
-<p><a href="https://st-nanzan-u.app.box.com/s/39ozu5cko8ljr9k2ec792qptf1nd1tko">研究紹介ポスター
-DL →</a></p>
+<p><a href="https://st-nanzan-u.app.box.com/s/39ozu5cko8ljr9k2ec792qptf1nd1tko" target="_blank" rel="noopener noreferrer">研究紹介ポスター
+DL</a></p>
 </div>
 </div>
 </div>
@@ -701,7 +756,12 @@ DL →</a></p>
 <div class="topic-date">
 2026.06.24
 </div>
+<div class="topic-content">
+<div class="topic-category">
+EVENT
+</div>
 <p><a href="topics.html#topic3">「セントラルヘリコプターサービス株式会社」の工場見学</a></p>
+</div>
 </div>
 <div class="topic-link">
 <p><a href="topics.html">過去のトピックス一覧を見る →</a></p>
