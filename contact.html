@@ -12,7 +12,7 @@
 
 
 
-<title>Information | 南山大学 鷹取研究室</title>
+<title>contact.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -270,14 +270,30 @@ font-weight: 700;
 letter-spacing: .16em;
 }
 .info-card h2 {
-margin: 0 0 25px;
-padding-bottom: 17px;
+margin: 0 0 12px;
 color: #16324f;
 font-size: 24px;
 font-weight: 700;
+}
+.card-description {
+margin: 0 0 27px;
+padding-bottom: 22px;
 border-bottom: 1px solid #e8edf3;
+color: #64748b;
+font-size: 14px;
+line-height: 1.8;
 }
 
+.link-section-title {
+margin: 25px 0 12px;
+color: #64748b;
+font-size: 11px;
+font-weight: 700;
+letter-spacing: .12em;
+}
+.link-section-title:first-of-type {
+margin-top: 0;
+}
 .link-list {
 display: grid;
 grid-template-columns: repeat(2, 1fr);
@@ -287,67 +303,125 @@ gap: 12px;
 display: flex;
 align-items: center;
 justify-content: space-between;
-min-height: 65px;
+min-height: 70px;
 padding: 15px 18px;
 background: #f8fbff;
 border: 1px solid #e1ecf7;
-border-radius: 10px;
+border-radius: 11px;
 color: #334155;
 font-size: 14px;
 font-weight: 600;
 text-decoration: none;
-transition: .25s;
+transition: all .25s ease;
 }
 .related-link:hover {
 background: #edf6ff;
 border-color: #b9dcfa;
 color: #0066c7;
-transform: translateY(-1px);
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(15,23,42,.05);
 }
 .related-link::after {
-content: "↗";
-margin-left: 15px;
+content: "詳しく見る →";
+flex-shrink: 0;
+margin-left: 18px;
 color: #0070c9;
-font-size: 16px;
-font-weight: 400;
+font-size: 10px;
+font-weight: 700;
+letter-spacing: .04em;
+white-space: nowrap;
+transition: transform .25s ease, color .25s ease;
+}
+.related-link:hover::after {
+color: #00a0df;
+transform: translateX(3px);
 }
 
-.location-info {
-margin-bottom: 27px;
-padding: 20px 23px;
-background: #f8fbff;
-border: 1px solid #e1ecf7;
-border-radius: 10px;
+.access-table-wrapper {
+width: 100%;
+overflow: hidden;
+border: 1px solid #dfe8f1;
+border-radius: 12px;
+background: white;
 }
-.location-label {
-margin-bottom: 7px;
-color: #0070c9;
-font-size: 11px;
+.access-table {
+width: 100%;
+border-collapse: collapse;
+table-layout: fixed;
+}
+.access-table tr {
+border-bottom: 1px solid #e7edf4;
+}
+.access-table tr:last-child {
+border-bottom: none;
+}
+.access-table th {
+width: 190px;
+padding: 18px 22px;
+background: #f3f8fd;
+color: #31506d;
+font-size: 13px;
 font-weight: 700;
-letter-spacing: .13em;
+text-align: left;
+vertical-align: middle;
+letter-spacing: .02em;
+border-right: 1px solid #e1e9f1;
 }
-.location-name {
-margin-bottom: 10px;
-color: #16324f;
-font-size: 18px;
-font-weight: 700;
-}
-.location-address {
-color: #64748b;
-font-size: 15px;
+.access-table td {
+padding: 18px 24px;
+background: #ffffff;
+color: #475569;
+font-size: 14px;
 line-height: 1.8;
+vertical-align: middle;
+}
+.access-table tr:hover th {
+background: #eaf4ff;
+}
+.access-table tr:hover td {
+background: #fbfdff;
+}
+.access-emphasis {
+color: #16324f;
+font-weight: 700;
+}
+
+.map-title-area {
+display: flex;
+align-items: flex-end;
+justify-content: space-between;
+margin: 32px 0 13px;
+}
+.map-title-group {
+display: block;
+}
+.map-label {
+margin-bottom: 4px;
+color: #0070c9;
+font-size: 10px;
+font-weight: 700;
+letter-spacing: .14em;
+}
+.map-title {
+color: #16324f;
+font-size: 17px;
+font-weight: 700;
+}
+.map-description {
+color: #94a3b8;
+font-size: 12px;
 }
 .map-wrapper {
 width: 100%;
 overflow: hidden;
 border-radius: 12px;
 border: 1px solid #e2e8f0;
-box-shadow: 0 3px 12px rgba(15,23,42,.06);
+box-shadow: 0 4px 16px rgba(15,23,42,.06);
 }
 .map-wrapper iframe {
 display: block;
 width: 100%;
-height: 450px;
+height: 420px;
 border: 0;
 }
 
@@ -416,6 +490,9 @@ margin-bottom: 40px;
 .introduction h2 {
 font-size: 24px;
 }
+.introduction p {
+font-size: 14px;
+}
 .container {
 width: 92%;
 margin-bottom: 55px;
@@ -426,14 +503,75 @@ padding: 30px 25px;
 .info-card h2 {
 font-size: 21px;
 }
+.card-description {
+font-size: 13px;
+}
 .link-list {
 grid-template-columns: 1fr;
 }
 .related-link {
-min-height: 58px;
+min-height: 60px;
+}
+.related-link::after {
+content: "→";
+margin-left: 12px;
+font-size: 16px;
+font-weight: 400;
+letter-spacing: 0;
+}
+.access-table th {
+width: 125px;
+padding: 15px 14px;
+font-size: 12px;
+}
+.access-table td {
+padding: 15px 16px;
+font-size: 13px;
+}
+.map-title-area {
+align-items: flex-end;
+}
+.map-description {
+font-size: 11px;
 }
 .map-wrapper iframe {
-height: 330px;
+height: 320px;
+}
+}
+
+@media(max-width:480px) {
+.page-title {
+padding: 42px 18px 38px;
+}
+.info-card {
+padding: 27px 21px;
+}
+.related-link {
+font-size: 13px;
+}
+.access-table-wrapper {
+border-radius: 9px;
+}
+.access-table th {
+width: 105px;
+padding: 14px 11px;
+font-size: 11px;
+}
+.access-table td {
+padding: 14px 13px;
+font-size: 12px;
+line-height: 1.7;
+word-break: break-word;
+}
+.map-title-area {
+display: block;
+}
+.map-description {
+display: block;
+margin-top: 5px;
+}
+.map-wrapper iframe {
+height: 280px;
 }
 }
 </style>
@@ -485,10 +623,10 @@ Information
 LABORATORY INFORMATION
 </div>
 <h2>
-研究室情報
+大学・研究室情報
 </h2>
 <p>
-鷹取研究室に関連するWebサイトおよび所在地をご案内します。
+南山大学や鷹取研究室に関連するWebサイト、研究室の所在地・アクセス情報を案内します。
 </p>
 </div>
 <div class="container">
@@ -499,16 +637,27 @@ RELATED LINKS
 <h2>
 関連リンク
 </h2>
+<p class="card-description">
+南山大学および鷹取研究室に関連するWebサイトを紹介します。
+</p>
+<div class="link-section-title">
+NANZAN UNIVERSITY
+</div>
 <div class="link-list">
-<p><a class="related-link" href="https://www.nanzan-u.ac.jp/" target="_blank">
+<p><a class="related-link" href="https://www.nanzan-u.ac.jp/" target="_blank" rel="noopener noreferrer">
 南山大学 </a></p>
-<p><a class="related-link" href="https://www.nanzan-u.ac.jp/Dept/fot.html" target="_blank">
+<p><a class="related-link" href="https://www.nanzan-u.ac.jp/Dept/fot.html" target="_blank" rel="noopener noreferrer">
 南山大学 理工学部 </a></p>
-<p><a class="related-link" href="https://www.nanzan-u.ac.jp/Dept/tc/top.html" target="_blank">
+<p><a class="related-link" href="https://www.nanzan-u.ac.jp/Dept/tc/top.html" target="_blank" rel="noopener noreferrer">
 南山大学 理工学部 電子情報工学科 </a></p>
-<p><a class="related-link" href="https://www.nanzan-u.ac.jp/nanzan_faculty/fot/tc/029626.html" target="_blank">
+<p><a class="related-link" href="https://www.nanzan-u.ac.jp/nanzan_faculty/fot/tc/029626.html" target="_blank" rel="noopener noreferrer">
 南山大学 教員紹介 </a></p>
-<p><a class="related-link" href="https://www.d-pam.com/nanzan-u/2615825/index.html?tm=1#target/page_no=105" target="_blank">
+</div>
+<div class="link-section-title">
+UNIVERSITY GUIDE
+</div>
+<div class="link-list">
+<p><a class="related-link" href="https://www.d-pam.com/nanzan-u/2615825/index.html?tm=1#target/page_no=105" target="_blank" rel="noopener noreferrer">
 2027年度 南山大学 案内誌 電子情報工学科 </a></p>
 </div>
 </div>
@@ -517,21 +666,71 @@ RELATED LINKS
 ACCESS
 </div>
 <h2>
-所在地
+所在地・アクセス
 </h2>
-<div class="location-info">
-<div class="location-label">
-ADDRESS
+<p class="card-description">
+鷹取研究室は、南山大学 S棟研究室棟3階にあります。
+</p>
+<div class="access-table-wrapper">
+<table class="access-table">
+<tr>
+<th>
+大学
+</th>
+<td>
+<span class="access-emphasis">南山大学</span>
+</td>
+</tr>
+<tr>
+<th>
+学部・学科（研究科・専攻）
+</th>
+<td>
+理工学部 電子情報工学科（理工学研究科 電子情報工学専攻）
+</td>
+</tr>
+<tr>
+<th>
+所在地
+</th>
+<td>
+〒466-8673<br>愛知県名古屋市昭和区山里町18
+</td>
+</tr>
+<tr>
+<th>
+研究室
+</th>
+<td>
+<span class="access-emphasis">鷹取研究室</span>
+</td>
+</tr>
+<tr>
+<th>
+研究室所在地
+</th>
+<td>
+S棟研究室棟3階<br>S307・S308
+</td>
+</tr>
+</table>
 </div>
-<div class="location-name">
-南山大学 理工学部
+<div class="map-title-area">
+<div class="map-title-group">
+<div class="map-label">
+GOOGLE MAPS
 </div>
-<div class="location-address">
-<p>〒466-8673<br> 愛知県名古屋市昭和区山里町18</p>
+<div class="map-title">
+キャンパスマップ
+</div>
+</div>
+<div class="map-description">
+名古屋大学駅・八事日赤駅から徒歩15分
 </div>
 </div>
 <div class="map-wrapper">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3262.317840103911!2d136.9628409!3d35.1486932!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037abe5d6126cd%3A0xa1f21e9d6f02cd57!2z5Y2X5bGx5aSn5a2mIOWQjeWPpOWxi-OCreODo-ODs-ODkeOCuQ!5e0!3m2!1sja!2sjp!4v1783751007607!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+<iframe src="allowfullscreen=&quot;&quot;" loading="lazy" referrerpolicy="strict-origin-when-cross-origin">
+</iframe>
 </div>
 </div>
 </div>
