@@ -12,7 +12,7 @@
 
 
 
-<title>Topics | 南山大学 鷹取研究室</title>
+<title>topics.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -209,7 +209,7 @@ background: #0070c9;
 .introduction {
 width: 90%;
 max-width: 850px;
-margin: 15px auto 55px;
+margin: 15px auto 45px;
 text-align: center;
 }
 .introduction .small {
@@ -231,6 +231,55 @@ margin: 18px auto 0;
 color: #64748b;
 font-size: 15px;
 line-height: 2;
+}
+
+.filter-area {
+width: 90%;
+max-width: 1000px;
+margin: 0 auto 25px;
+}
+.filter-title {
+margin-bottom: 12px;
+color: #64748b;
+font-size: 12px;
+font-weight: 700;
+letter-spacing: .12em;
+text-align: center;
+}
+.filter-buttons {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+gap: 9px;
+}
+.filter-button {
+appearance: none;
+-webkit-appearance: none;
+padding: 9px 17px;
+background: white;
+border: 1px solid #dbe5ef;
+border-radius: 30px;
+color: #64748b;
+font-family: Arial, "Noto Sans JP", sans-serif;
+font-size: 11px;
+font-weight: 700;
+letter-spacing: .07em;
+cursor: pointer;
+transition: all .2s ease;
+box-shadow: 0 2px 8px rgba(15,23,42,.03);
+}
+.filter-button:hover {
+color: #0066c7;
+border-color: #9fcdf3;
+background: #f8fbff;
+transform: translateY(-1px);
+}
+.filter-button.active {
+background: #0066c7;
+border-color: #0066c7;
+color: white;
+box-shadow: 0 4px 12px rgba(0,102,199,.18);
 }
 
 .container {
@@ -260,17 +309,58 @@ background: linear-gradient(180deg, #0066c7, #00a9e8);
 padding: 34px 0;
 border-bottom: 1px solid #e8edf3;
 scroll-margin-top: 90px;
+animation: topicFade .3s ease;
 }
 .blog-post:last-child {
 border-bottom: none;
 }
+.blog-post.hidden {
+display: none;
+}
+@keyframes topicFade {
+from {
+opacity: 0;
+transform: translateY(5px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.topic-header {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 10px;
+margin-bottom: 11px;
+}
 .post-meta {
-display: inline-block;
-margin-bottom: 10px;
 color: #0070c9;
 font-size: 13px;
 font-weight: 700;
 letter-spacing: .05em;
+}
+.topic-category {
+display: inline-block;
+padding: 4px 10px;
+background: #eaf4ff;
+border: 1px solid #cfe7fb;
+border-radius: 20px;
+color: #0066c7;
+font-size: 10px;
+font-weight: 700;
+letter-spacing: .08em;
+line-height: 1.4;
+cursor: pointer;
+transition: all .2s ease;
+user-select: none;
+}
+.topic-category:hover {
+background: #0066c7;
+border-color: #0066c7;
+color: white;
+transform: translateY(-1px);
 }
 .blog-post h3 {
 margin: 0 0 15px;
@@ -311,7 +401,7 @@ color: #0066c7;
 font-size: 14px;
 font-weight: 600;
 text-decoration: none;
-transition: .2s;
+transition: color .2s ease, transform .2s ease;
 }
 .topic-links a::before {
 content: "›";
@@ -321,7 +411,35 @@ font-size: 18px;
 line-height: 16px;
 }
 .topic-links a:hover {
-color: #00a0df;
+color: #00a9e8;
+transform: translateX(3px);
+}
+.more-info {
+margin: 15px 0 8px !important;
+color: #64748b !important;
+font-size: 13px !important;
+font-weight: 700;
+letter-spacing: .05em;
+}
+
+.no-results {
+display: none;
+padding: 55px 20px;
+text-align: center;
+}
+.no-results.show {
+display: block;
+}
+.no-results-title {
+margin-bottom: 7px;
+color: #16324f;
+font-size: 18px;
+font-weight: 700;
+}
+.no-results-text {
+margin: 0 !important;
+color: #94a3b8 !important;
+font-size: 14px !important;
 }
 
 footer {
@@ -384,10 +502,24 @@ padding: 50px 20px 45px;
 font-size: 32px;
 }
 .introduction {
-margin-bottom: 40px;
+margin-bottom: 32px;
 }
 .introduction h2 {
 font-size: 24px;
+}
+.introduction p {
+font-size: 14px;
+}
+.filter-area {
+width: 92%;
+margin-bottom: 20px;
+}
+.filter-buttons {
+gap: 7px;
+}
+.filter-button {
+padding: 8px 13px;
+font-size: 10px;
 }
 .container {
 width: 92%;
@@ -404,6 +536,34 @@ font-size: 19px;
 }
 .blog-post p {
 font-size: 14px;
+}
+.topic-header {
+gap: 8px;
+}
+.post-meta {
+font-size: 12px;
+}
+.topic-category {
+font-size: 9px;
+padding: 3px 8px;
+}
+.topic-links {
+padding: 14px 16px;
+}
+.topic-links a {
+font-size: 13px;
+}
+}
+
+@media(max-width:480px) {
+.filter-buttons {
+justify-content: flex-start;
+}
+.filter-button {
+flex: 0 0 auto;
+}
+.topics-card {
+padding: 6px 21px;
 }
 }
 </style>
@@ -461,23 +621,72 @@ NEWS &amp; EVENTS
 学会発表、受賞、イベント、研究室活動など、鷹取研究室の最新情報を紹介します。
 </p>
 </div>
+<div class="filter-area">
+<div class="filter-title">
+CATEGORY
+</div>
+<div class="filter-buttons">
+<button class="filter-button active" type="button" data-filter="ALL">
+ALL
+</button>
+<button class="filter-button" type="button" data-filter="CONFERENCE">
+CONFERENCE
+</button>
+<button class="filter-button" type="button" data-filter="AWARD">
+AWARD
+</button>
+<button class="filter-button" type="button" data-filter="INFORMATION">
+INFORMATION
+</button>
+<button class="filter-button" type="button" data-filter="EVENT">
+EVENT
+</button>
+</div>
+</div>
 <div class="container">
 <div class="topics-card">
-<div id="topic1" class="blog-post">
+<div id="topic1" class="blog-post" data-categories="CONFERENCE AWARD">
+<div class="topic-header">
 <div class="post-meta">
 2026 / 09 / 07
 </div>
+<div class="topic-category" data-category="CONFERENCE">
+CONFERENCE
+</div>
+<div class="topic-category" data-category="AWARD">
+AWARD
+</div>
+</div>
 <h3>
-若手研究者奨励賞受賞
+VTC Young Researcher’s Encouragement Award受賞
 </h3>
 <p>
-修士1年の大竹 亜依さん、松波 翔也さんがIEEE VTS Tokyo / Japan Chapter
-より若手研究者奨励賞を受賞しました。
+修士1年の大竹 亜依さん、松波 翔也さんがIEEE VTS Tokyo / Japan
+ChapterよりVTC Young Researcher’s Encouragement Awardを受賞しました。
 </p>
+<div class="topic-links">
+<p class="more-info">
+詳しくはこちら
+</p>
+<p><a href="https://www.nanzan-u.ac.jp/Menu/news/2026/261007_jusho.html" target="_blank" rel="noopener noreferrer">南山大学
+News &amp; Topics</a></p>
+<p><a href="https://www.instagram.com/p/DeL3WZYic3Q/?img_index=1" target="_blank" rel="noopener noreferrer">南山大学
+公式Instagram</a></p>
+<p><a href="https://www.facebook.com/NanzanUniversity" target="_blank" rel="noopener noreferrer">南山大学
+公式Facebook</a></p>
 </div>
-<div id="topic2" class="blog-post">
+</div>
+<div id="topic2" class="blog-post" data-categories="INFORMATION EVENT">
+<div class="topic-header">
 <div class="post-meta">
 2026 / 07 / 08
+</div>
+<div class="topic-category" data-category="INFORMATION">
+INFORMATION
+</div>
+<div class="topic-category" data-category="EVENT">
+EVENT
+</div>
 </div>
 <h3>
 南山大学オープンキャンパスについて
@@ -507,14 +716,22 @@ NEWS &amp; EVENTS
 </li>
 </ul>
 <div class="topic-links">
-<p><a href="https://www.nanzan-u.ac.jp/admission/opencampus/" target="_blank">2026年オープンキャンパス特設サイト</a>
-<a href="https://st-nanzan-u.app.box.com/s/39ozu5cko8ljr9k2ec792qptf1nd1tko" target="_blank">2026年オープンキャンパス
+<p class="more-info">
+詳しくはこちら
+</p>
+<p><a href="https://www.nanzan-u.ac.jp/admission/opencampus/" target="_blank" rel="noopener noreferrer">2026年オープンキャンパス特設サイト</a></p>
+<p><a href="https://st-nanzan-u.app.box.com/s/39ozu5cko8ljr9k2ec792qptf1nd1tko" target="_blank" rel="noopener noreferrer">2026年オープンキャンパス
 研究紹介ポスター</a></p>
 </div>
 </div>
-<div id="topic3" class="blog-post">
+<div id="topic3" class="blog-post" data-categories="EVENT">
+<div class="topic-header">
 <div class="post-meta">
 2026 / 06 / 24
+</div>
+<div class="topic-category" data-category="EVENT">
+EVENT
+</div>
 </div>
 <h3>
 工場見学
@@ -523,9 +740,14 @@ NEWS &amp; EVENTS
 「セントラルヘリコプターサービス株式会社」の工場を見学しました。
 </p>
 </div>
-<div class="blog-post">
+<div id="topic4" class="blog-post" data-categories="AWARD">
+<div class="topic-header">
 <div class="post-meta">
 2026 / 03 / 19
+</div>
+<div class="topic-category" data-category="AWARD">
+AWARD
+</div>
 </div>
 <h3>
 南山大学大学院 修士論文 優秀論文賞受賞
@@ -534,9 +756,14 @@ NEWS &amp; EVENTS
 修士2年の小畠 慎二郎さんが2025年度優秀論文賞を受賞しました。
 </p>
 </div>
-<div class="blog-post">
+<div id="topic5" class="blog-post" data-categories="CONFERENCE">
+<div class="topic-header">
 <div class="post-meta">
 2026 / 03 / 09 ～ 2026 / 03 / 13
+</div>
+<div class="topic-category" data-category="CONFERENCE">
+CONFERENCE
+</div>
 </div>
 <h3>
 学会口頭発表
@@ -545,9 +772,14 @@ NEWS &amp; EVENTS
 電子情報通信学会総合大会に学部4年の2名が参加しました。
 </p>
 </div>
-<div class="blog-post">
+<div id="topic6" class="blog-post" data-categories="CONFERENCE">
+<div class="topic-header">
 <div class="post-meta">
 2025 / 09 / 08 ～ 2025 / 09 / 12
+</div>
+<div class="topic-category" data-category="CONFERENCE">
+CONFERENCE
+</div>
 </div>
 <h3>
 学会口頭発表
@@ -556,11 +788,87 @@ NEWS &amp; EVENTS
 電子情報通信学会ソサイエティ大会に修士2年の2名が参加しました。
 </p>
 </div>
+<div id="no-results" class="no-results">
+<div class="no-results-title">
+<p>該当する記事はありません</p>
+</div>
+<p class="no-results-text">
+別のカテゴリーを選択してください。
+</p>
+</div>
 </div>
 </div>
 <footer>
 © 2026 Takatori Laboratory
 </footer>
+<script>
+function filterTopics(category) {
+
+var posts = document.querySelectorAll(".blog-post");
+var buttons = document.querySelectorAll(".filter-button");
+var noResults = document.getElementById("no-results");
+var visibleCount = 0;
+
+posts.forEach(function(post) {
+
+var categories = post.getAttribute("data-categories");
+
+if (category === "ALL" || categories.split(" ").indexOf(category) !== -1) {
+post.classList.remove("hidden");
+visibleCount++;
+} else {
+post.classList.add("hidden");
+}
+
+});
+
+buttons.forEach(function(button) {
+
+if (button.getAttribute("data-filter") === category) {
+button.classList.add("active");
+} else {
+button.classList.remove("active");
+}
+
+});
+
+if (visibleCount === 0) {
+noResults.classList.add("show");
+} else {
+noResults.classList.remove("show");
+}
+
+}
+
+document.querySelectorAll(".filter-button").forEach(function(button) {
+
+button.addEventListener("click", function() {
+
+var category = this.getAttribute("data-filter");
+
+filterTopics(category);
+
+});
+
+});
+
+document.querySelectorAll(".topic-category").forEach(function(categoryLabel) {
+
+categoryLabel.addEventListener("click", function() {
+
+var category = this.getAttribute("data-category");
+
+filterTopics(category);
+
+document.querySelector(".filter-area").scrollIntoView({
+behavior: "smooth",
+block: "start"
+});
+
+});
+
+});
+</script>
 
 
 
