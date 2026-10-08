@@ -12,7 +12,7 @@
 
 
 
-<title>研究内容| 南山大学 鷹取研究室</title>
+<title>research.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -319,6 +319,185 @@ text-align: justify;
 margin-bottom: 0;
 }
 
+.learning-step {
+position: relative;
+margin-bottom: 15px;
+padding: 23px 27px;
+background: #f8fbff;
+border: 1px solid #e1ecf7;
+border-radius: 11px;
+}
+.learning-step:last-child {
+margin-bottom: 0;
+}
+.learning-step-label {
+margin-bottom: 8px;
+color: #0070c9;
+font-size: 11px;
+font-weight: 700;
+letter-spacing: .12em;
+}
+.learning-step h3 {
+margin: 0 0 10px;
+color: #16324f;
+font-size: 17px;
+font-weight: 700;
+}
+.card .learning-step p {
+margin: 0;
+font-size: 14px;
+line-height: 1.9;
+}
+
+.research-info {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 15px;
+margin-top: 25px;
+}
+.research-info-item {
+padding: 24px;
+background: #f8fbff;
+border: 1px solid #e1ecf7;
+border-radius: 11px;
+}
+.research-info-title {
+margin-bottom: 12px;
+padding-bottom: 11px;
+border-bottom: 1px solid #e1ecf7;
+color: #16324f;
+font-size: 16px;
+font-weight: 700;
+}
+.card .research-info-item p {
+margin: 0;
+font-size: 14px;
+line-height: 1.9;
+text-align: left;
+}
+
+@media(max-width:768px) {
+.learning-step {
+padding: 20px;
+}
+.learning-step h3 {
+font-size: 16px;
+}
+.card .learning-step p {
+font-size: 13px;
+}
+.research-info {
+grid-template-columns: 1fr;
+gap: 12px;
+}
+.research-info-item {
+padding: 20px;
+}
+.research-info-title {
+font-size: 15px;
+}
+.card .research-info-item p {
+font-size: 13px;
+}
+}
+
+.learning-timeline {
+margin-top: 32px;
+}
+.learning-item {
+display: flex;
+align-items: stretch;
+gap: 18px;
+position: relative;
+padding-bottom: 30px;
+}
+.learning-item:last-child {
+padding-bottom: 0;
+}
+.learning-item::before {
+content: "";
+position: absolute;
+left: 16px;
+top: 33px;
+bottom: 0;
+width: 2px;
+background: #dce5ee;
+}
+.learning-item:last-child::before {
+display: none;
+}
+.learning-number {
+position: relative;
+z-index: 1;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+width: 34px;
+height: 34px;
+border-radius: 50%;
+background: #eaf4ff;
+color: #0066c7;
+font-size: 11px;
+font-weight: 700;
+}
+.learning-item:last-child .learning-number {
+background: #0066c7;
+color: white;
+}
+.learning-content {
+flex: 1;
+min-width: 0;
+padding-top: 1px;
+}
+.learning-period {
+margin-bottom: 6px;
+color: #0070c9;
+font-size: 12px;
+font-weight: 700;
+}
+.learning-content h3 {
+margin: 0 0 6px;
+color: #16324f;
+font-size: 17px;
+font-weight: 700;
+line-height: 1.5;
+}
+.learning-description {
+color: #64748b;
+font-size: 14px;
+line-height: 1.8;
+}
+
+@media(max-width:768px) {
+.learning-timeline {
+margin-top: 25px;
+}
+.learning-item {
+gap: 13px;
+padding-bottom: 27px;
+}
+.learning-number {
+width: 30px;
+height: 30px;
+font-size: 10px;
+}
+.learning-item::before {
+left: 14px;
+top: 30px;
+}
+.learning-period {
+font-size: 11px;
+}
+.learning-content h3 {
+font-size: 15px;
+}
+.learning-description {
+font-size: 13px;
+line-height: 1.8;
+}
+}
+
 footer {
 background: linear-gradient(135deg, #003d82 0%, #0066c7 100%);
 color: rgba(255,255,255,.78);
@@ -576,6 +755,160 @@ Sensing and Communication）」が主要技術の一つになると予想され�
 <p>
 周波数という限られた資源を有効に使いながら、利用する人の立場に立ったワイヤレスシステムの研究に取り組み、誰もが自由にワイヤレスを使っていける未来につなげていくことが私たちの目標です。
 </p>
+</div>
+</br> <!-- ==============================
+LABORATORY LEARNING
+============================== --> </br>
+<div id="research-topics" class="introduction">
+<div class="small">
+LABORATORY ACTIVITIES
+</div>
+<h2>
+鷹取研究室での取り組み
+</h2>
+<p>
+鷹取研究室では、次世代の無線通信・レーダ技術を対象に、干渉の抑制や通信の高信頼化、ISAC
+に関する研究に取り組んでいます。
+</p>
+</div>
+<div class="card">
+<div class="card-number">
+04 / LABORATORY LEARNING
+</div>
+<h2>
+研究室配属から卒業までの流れ
+</h2>
+<p>
+鷹取研究室では、3年次の配属後に無線通信の基礎を学び、段階的に専門的な研究へ進みます。
+</p>
+<div class="learning-timeline">
+<div class="learning-item">
+<div class="learning-number">
+01
+</div>
+<div class="learning-content">
+<div class="learning-period">
+3年次｜研究室配属後
+</div>
+<h3>
+無線通信の基礎学習
+</h3>
+<div class="learning-description">
+数式・プログラミング、無線LANやLTE・5Gの仕組みを学習します。
+</div>
+</div>
+</div>
+<div class="learning-item">
+<div class="learning-number">
+02
+</div>
+<div class="learning-content">
+<div class="learning-period">
+3年次｜基礎学習と並行
+</div>
+<h3>
+測定・実験と研究テーマの検討
+</h3>
+<div class="learning-description">
+無線通信の性能を実測しながら、興味のある研究テーマを選択します。
+</div>
+</div>
+</div>
+<div class="learning-item">
+<div class="learning-number">
+03
+</div>
+<div class="learning-content">
+<div class="learning-period">
+3年次｜2月頃まで
+</div>
+<h3>
+研究方針の決定
+</h3>
+<div class="learning-description">
+実験・測定または理論・シミュレーションなど、研究の進め方を相談して決定します。
+</div>
+</div>
+</div>
+<div class="learning-item">
+<div class="learning-number">
+04
+</div>
+<div class="learning-content">
+<div class="learning-period">
+4年次
+</div>
+<h3>
+卒業研究
+</h3>
+<div class="learning-description">
+選択したテーマに取り組み、打ち合わせを重ねながら研究を進めます。
+</div>
+</div>
+</div>
+<div class="learning-item">
+<div class="learning-number">
+05
+</div>
+<div class="learning-content">
+<div class="learning-period">
+4年次｜卒業時
+</div>
+<h3>
+卒業論文・研究成果の発表
+</h3>
+<div class="learning-description">
+研究成果を卒業論文にまとめ、発表します。希望に応じて学会発表などにも挑戦できます。
+</div>
+</div>
+</div>
+<p></br></p>
+<h2>
+研究テーマ例
+</h2>
+<p>
+鷹取研究室で現在取り組んでいる研究テーマの一例を紹介します。
+</p>
+<h3>
+修士1年
+</h3>
+<ul>
+<li>
+<p>
+次世代車載レーダにおける空間干渉抑圧法に関する研究
+</p>
+</li>
+<li>
+<p>
+通信融合型レーダにおける帯域制限フィルタに関する研究
+</p>
+</li>
+</ul>
+<h3>
+学部4年
+</h3>
+<ul>
+<li>
+<p>
+次世代車載レーダにおける多重干渉抑圧法の研究
+</p>
+</li>
+<li>
+<p>
+レーダ・通信融合システム構成法及び制御法の研究
+</p>
+</li>
+<li>
+<p>
+マルチアンテナを用いたIoT無線高信頼化の研究
+</p>
+</li>
+</ul>
+<p>
+※研究テーマは年度によって変更される場合があります。
+</p>
+</div>
+</div>
 </div>
 </div>
 <footer>
