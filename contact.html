@@ -110,9 +110,26 @@ padding: 0 !important;
 
 header {
 width: 100%;
-background: linear-gradient(135deg, #003d82 0%, #0066c7 100%);
+position: relative;
+overflow: hidden;
+background:
+radial-gradient(circle at 85% 15%, rgba(0,180,255,.22) 0%, transparent 38%),
+linear-gradient(120deg, #002b61 0%, #004b98 55%, #006bc5 100%);
 color: white;
 padding: 38px 6%;
+}
+
+
+header::before { 
+content: ""; 
+position: absolute; 
+width: 420px; 
+height: 420px; 
+border: 1px solid rgba(255,255,255,.10); 
+border-radius: 50%; 
+right: -110px; top: -280px; 
+box-shadow: 0 0 0 85px rgba(255,255,255,.035), 0 0 0 170px rgba(255,255,255,.025); 
+pointer-events: none; 
 }
 .header-inner {
 max-width: 1200px;
