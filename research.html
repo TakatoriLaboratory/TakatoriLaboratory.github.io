@@ -12,7 +12,7 @@
 
 
 
-<title>研究内容 | 南山大学 鷹取研究室</title>
+<title>research.knit</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -108,6 +108,18 @@ margin: 0 !important;
 padding: 0 !important;
 }
 
+.university {
+border-left: 1px solid #ffffff88;
+padding-left: 22px;
+font-size: 14px;
+line-height: 1.3;
+}
+.lab-name {
+font-family: serif;
+font-size: 38px;
+font-weight: bold;
+white-space: nowrap;
+}
 header {
 width: 100%;
 position: relative;
@@ -118,22 +130,13 @@ linear-gradient(120deg, #002b61 0%, #004b98 55%, #006bc5 100%);
 color: white;
 padding: 38px 6%;
 }
-
-
-header::before { 
-content: ""; 
-position: absolute; 
-width: 420px; 
-height: 420px; 
-border: 1px solid rgba(255,255,255,.10); 
-border-radius: 50%; 
-right: -110px; top: -280px; 
-box-shadow: 0 0 0 85px rgba(255,255,255,.035), 0 0 0 170px rgba(255,255,255,.025); 
-pointer-events: none; 
-}
+header::before { content: ""; position: absolute; width: 420px; height: 420px; border: 1px solid rgba(255,255,255,.10); border-radius: 50%; right: -110px; top: -280px; box-shadow: 0 0 0 85px rgba(255,255,255,.035), 0 0 0 170px rgba(255,255,255,.025); pointer-events: none; }
 .header-inner {
 max-width: 1200px;
+display: flex;
+align-items: center;
 margin: 0 auto;
+gap : 24px;
 }
 header h1 {
 margin: 0;
@@ -197,7 +200,7 @@ background: #0077dd;
 .page-title {
 padding: 75px 20px 65px;
 text-align: center;
-background:
+background:transparent;
 radial-gradient(circle at 80% 10%, #dbeeff 0, transparent 32%),
 #f5f8fc;
 }
@@ -542,6 +545,14 @@ border-bottom: 1px solid #e2e8f0;
 header {
 padding: 28px 22px;
 }
+.university {
+line-height: 1.3;
+}
+.header-inner {
+flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+}
 header h1 {
 font-size: 28px;
 }
@@ -644,13 +655,15 @@ font-size: 12px;
 </style>
 <header>
 <div class="header-inner">
+<div class="lab-name">
 <h1>
 <a href="index.html">鷹取研究室</a>
 </h1>
-<p>
-南山大学　理工学部・電子情報工学科<br>
-大学院　理工学研究科・電子情報工学専攻
-</p>
+</div>
+<div class="university">
+<p>南山大学　理工学部・電子情報工学科<br>
+大学院　理工学研究科・電子情報工学専攻</p>
+</div>
 </div>
 </header>
 <div class="menu-toggle" onclick="toggleMenu()">
@@ -666,12 +679,18 @@ font-size: 12px;
 </nav>
 <script>
 function toggleMenu() {
-document.getElementById("nav-menu").classList.toggle("open");
+var menu = document.getElementById("nav-menu");
+var button = document.querySelector(".menu-toggle");
+var isOpen = menu.classList.toggle("open");
+button.textContent = isOpen ? "✕" : "☰";
+button.setAttribute("aria-expanded", String(isOpen));
 }
 
 document.querySelectorAll("#nav-menu a").forEach(function(el) {
 el.addEventListener("click", function() {
 document.getElementById("nav-menu").classList.remove("open");
+document.querySelector(".menu-toggle").textContent = "☰";
+document.querySelector(".menu-toggle").setAttribute("aria-expanded", "false");
 });
 });
 </script>
@@ -880,6 +899,22 @@ LABORATORY ACTIVITIES
 </div>
 </div>
 </div>
+<div class="learning-item">
+<div class="learning-number">
+06
+</div>
+<div class="learning-content">
+<div class="learning-period">
+修士1年次以降
+</div>
+<h3>
+修士論文・研究成果の発表
+</h3>
+<div class="learning-description">
+研究成果を修士論文にまとめ、発表します。希望に応じて学会発表などにも挑戦できます。
+</div>
+</div>
+</div>
 <p></br></p>
 <h2>
 研究テーマ例
@@ -923,7 +958,7 @@ LABORATORY ACTIVITIES
 </li>
 </ul>
 <p>
-※研究テーマは年度によって変更される場合があります。
+※研究テーマは年度によって変わります。
 </p>
 </div>
 </div>
